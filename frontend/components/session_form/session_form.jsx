@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Login') {
       formDisplay = (
         <form onSubmit={this.handleSubmit} className="login-form-box">
-            Welcome to DistanceTravelled!
+            Welcome to DistanceTraveled!
             <br/>
             Don't have an account? {this.props.navLink}
             {this.renderErrors()}
@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
       )} else {
         formDisplay = (
           <form onSubmit={this.handleSubmit} className="signup-form-box">
-              Welcome to DistanceTravelled!
+              Welcome to DistanceTraveled!
               <br/>
               Already have an account? {this.props.navLink}
               {this.renderErrors()}
