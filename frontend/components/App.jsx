@@ -9,6 +9,7 @@ const App = () => (
   <div>
     <header>
     <h1>DistanceTravelled</h1>
+    <i class="fas fa-download"></i>
     <GreetingContainer />
     </header>
     <AuthRoute path="/login" component={LogInFormContainer} />

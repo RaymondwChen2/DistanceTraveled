@@ -36,6 +36,10 @@ class SessionForm extends React.Component {
     );
   }
 
+  demoLogin(){
+    return this.props.formType === 'Login'
+  }
+
   onSignUpForm(){
     return this.props.formType === 'Signup'
   }
@@ -64,8 +68,7 @@ class SessionForm extends React.Component {
               <input type='text' value={this.state.email} onChange={this.update('email')}/>
               <br/>
               </label>
-              :
-            null}
+              : null}
           </div>   
             <label>Password:
               <input type="password"
@@ -75,7 +78,21 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
+            <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
+          <div>
+          {this.demoLogin() ? 
+              
+            <button
+              onClick={(e) => {
+                e.preventDefault(); 
+                this.props.processForm({
+                  username: 'Guest',
+                  password: '123456',
+                  email: 'guest@guest.com'})
+                  }}> Demo</button>
+              : null}
+          </div>  
           </div>
         </form>
       </div>
