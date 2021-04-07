@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return(
+    return (
       <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
@@ -45,13 +45,14 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    return (
-      <div className="login-form-container">
+    let formDisplay;
+    if (this.props.formType === 'Login') {
+      formDisplay = (
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to DistanceTravelled!
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
+            Welcome to DistanceTravelled!
+            <br/>
+            Don't have an account? {this.props.navLink}
+            {this.renderErrors()}
           <div className="login-form">
             <br/>
             <label>Username:
@@ -59,17 +60,9 @@ class SessionForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
-                />
-                </label>
-                <br/>
-          <div>
-            {this.onSignUpForm() ? 
-              <label>Email:
-              <input type='text' value={this.state.email} onChange={this.update('email')}/>
-              <br/>
-              </label>
-              : null}
-          </div>   
+              />
+            </label>
+            <br/>
             <label>Password:
               <input type="password"
                 value={this.state.password}
@@ -79,10 +72,13 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+          <input 
+            className="session-submit" 
+            type="submit" 
+            value={this.props.formType}
+          />
+          </div>
           <div>
-          {this.demoLogin() ? 
-              
             <button
               onClick={(e) => {
                 e.preventDefault(); 
@@ -90,14 +86,59 @@ class SessionForm extends React.Component {
                   username: 'Guest',
                   password: '123456',
                   email: 'guest@guest.com'})
-                  }}> Demo</button>
-              : null}
-          </div>  
+              }}> Demo
+            </button>
           </div>
         </form>
-      </div>
-    );
-  }
+      )} else {
+        formDisplay = (
+          <form onSubmit={this.handleSubmit} className="signup-form-box">
+              Welcome to DistanceTravelled!
+              <br/>
+              Already have an account? {this.props.navLink}
+              {this.renderErrors()}
+            <div className="signup-form">
+              <br/>
+              <label>Username:
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="signup-input"
+                />
+              </label>
+              <br/>
+            <div>
+                <label>Email:
+                  <input type='text' 
+                    value={this.state.email} 
+                    onChange={this.update('email')}
+                  />
+                <br/>
+                </label>
+            </div>   
+              <label>Password:
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="signup-input"
+                />
+              </label>
+              <br/>
+              <br/>
+            <input 
+              className="session-submit" 
+              type="submit" 
+              value={this.props.formType}
+            />
+              </div>
+            </form>
+      );
+      
+    }
+    return (
+      formDisplay
+    )
+}
 }
 
 export default SessionForm;
