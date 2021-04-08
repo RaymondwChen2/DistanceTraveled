@@ -7,5 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 demo = {username: 'Guest', password: '123456', email: 'guest@guest.com'}
+user1 = {username: 'raymond', password: '123456', email: 'raymond@raymond.com'}
+user2 = {username: 'elsa', password: '123456', email: 'elsa@elsa.com'}
+
 
 demo = User.create!(demo)
+user1 = User.create!(user1)
+user2 = User.create!(user2)
