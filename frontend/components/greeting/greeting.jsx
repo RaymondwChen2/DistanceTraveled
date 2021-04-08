@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout, login }) => {
   const sessionLinks = () => (
-    <div>
+    <div className='nav-container'>
       <nav className="nav-login-signup">
         <div>
           <a className='homeLogo' href="/"></a>
@@ -12,7 +12,6 @@ const Greeting = ({ currentUser, logout, login }) => {
           <Link to="/login" className='login-button'>LOGIN</Link>
           <Link to="/signup" className='signup-button'>SIGN UP</Link>
         </div>
-
       </nav>
     </div>  
     
