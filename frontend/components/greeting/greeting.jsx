@@ -17,15 +17,25 @@ const Greeting = ({ currentUser, logout, login }) => {
     </div>  
     
 );
-  const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
+  const personalDashbaord = () => (
+    <div className="dash-board-container">
+      <div>
+        <a className='homeLogo' href="/"></a>
+      </div>
+      <div>
+        <h2 className="header-name">Hi, {currentUser.username}!</h2>
+        <button className="logout-button" onClick={logout}>Log Out</button>
+      </div>
+    </div>
+
+    // <hgroup className="header-group">
+    //   <h2 className="header-name">Hi, {currentUser.username}!</h2>
+    //   <button className="header-button" onClick={logout}>Log Out</button>
+    // </hgroup>
     
   );
 
-  return currentUser ? personalGreeting() : sessionLinks();
+  return currentUser ? personalDashbaord() : sessionLinks();
 };
 
 export default Greeting;

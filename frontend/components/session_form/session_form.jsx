@@ -51,7 +51,9 @@ class SessionForm extends React.Component {
       formDisplay = (
       <div className='login-form-container'>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-      <div className="login-form">
+          <div className="login-form">
+          {this.renderErrors()}
+          <br/>
             <button
               onClick={(e) => {
                 e.preventDefault(); 
@@ -61,7 +63,7 @@ class SessionForm extends React.Component {
                   email: 'guest@guest.com'})
               }} className="demo-button"> Login with demo
             </button>
-        <br/>
+            <br/>
               <input type="text"
                 placeholder="Username"
                 value={this.state.username}
@@ -84,7 +86,6 @@ class SessionForm extends React.Component {
           </div>
           <br/>    
           Don't have an account? {this.props.navLink}
-            {this.renderErrors()}
         </form>
       </div>  
       )} else {
@@ -92,6 +93,8 @@ class SessionForm extends React.Component {
         <div className='signup-form-container'>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
           <div className="signup-form">
+          {this.renderErrors()}
+          <br/>
             <button
               onClick={(e) => {
                 e.preventDefault(); 
@@ -131,7 +134,6 @@ class SessionForm extends React.Component {
             </div>
               <br/>
               Already have an account? {this.props.navLink}
-              {this.renderErrors()}
           </form>
         </div>  
       );

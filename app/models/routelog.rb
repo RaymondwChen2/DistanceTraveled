@@ -1,0 +1,2 @@
+class Routelog < ApplicationRecord
+end

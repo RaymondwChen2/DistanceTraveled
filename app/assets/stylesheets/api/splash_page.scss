@@ -14,8 +14,9 @@
 
 .splash-container{
   display: flex;
-  height: 1600px;
+  height: 2600px;
   width: 1300px;
+  flex-direction: column;
   justify-content: center;
   margin: auto;
   position: relative;
@@ -23,9 +24,22 @@
 }
 
 .splash{
+  display: block;
+  position: relative;
   width: 1300px;
-  height: 800px;
-  background-image: image-url('splash.jpg');
+  height: 1200px;
+  background-image: image-url('splash2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.splash2{
+  display: block;
+  width: 1300px;
+  height: 1200px;
+  background-image: image-url('splash3.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
