@@ -19,6 +19,30 @@
   background-color: #F0F0F0;
 }
 
+.signup-form{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.session-submit{
+  background-color: #1DDD7C;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .login-button{
   display: block;
   color: black;
@@ -35,9 +59,42 @@
     color: white;
     text-decoration: none;
     padding: 10px;
-    padding-left: 22px;
-    padding-right: 22px;
-    background-color: #00cc00;
+    // padding-left: px;
+    background-color: #1DDD7C;
     border-radius: 5px;
     width: 65px;
+    height: 20px;
+}
+
+.homeLogo{
+  display: block;
+  background-image: image-url('DistanceTraveledIcon.png');
+  background-size: cover;
+  width: 250px;
+  height: 45px;
+}
+
+.signup-input{
+  background-color: white;
+  height: 35px;
+  border: lightgray 1px solid;
+
+}
+
+.login-input{
+  height: 35px;
+  background-color: white;
+  border: lightgray 1px solid;
+}
+
+.demo-button{
+  background-color: #4267B2;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

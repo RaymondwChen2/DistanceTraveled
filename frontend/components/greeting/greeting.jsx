@@ -5,18 +5,14 @@ const Greeting = ({ currentUser, logout, login }) => {
   const sessionLinks = () => (
     <div>
       <nav className="nav-login-signup">
-        {/* <ul>
-          <li><a className='homeLogo' href="/">DistanceTraveled</a></li>
-        </ul> */}
-        <div><a className='homeLogo' href="/">DistanceTraveled</a></div>
-        {/* <ul className='nav-li'>
-          <li className='login-submit'><Link to="/login" >Login</Link></li>
-          <li className='signup-submit'><Link to="/signup" >Sign up</Link></li>
-        </ul> */}
-        <div className='nav-li'>
-          <a className='login-button' href="#/login">LOGIN</a>
-          <a className='signup-button' href="#/signup"> SIGN UP</a>
+        <div>
+          <a className='homeLogo' href="/"></a>
         </div>
+        <div className='nav-li'>
+          <Link to="/login" className='login-button'>LOGIN</Link>
+          <Link to="/signup" className='signup-button'>SIGN UP</Link>
+        </div>
+
       </nav>
     </div>  
     

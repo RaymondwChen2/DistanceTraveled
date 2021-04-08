@@ -1,4 +1,5 @@
 import React from 'react';
+import { login } from '../../utils/session';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -50,36 +51,7 @@ class SessionForm extends React.Component {
       formDisplay = (
       <div className='login-form-container'>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to DistanceTraveled!
-            <br/>
-            Don't have an account? {this.props.navLink}
-            {this.renderErrors()}
       <div className="login-form">
-        <br/>
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <br/>
-          <input 
-            className="session-submit" 
-            type="submit" 
-            value={this.props.formType}
-          />
-          </div>
-          <div>
             <button
               onClick={(e) => {
                 e.preventDefault(); 
@@ -87,46 +59,69 @@ class SessionForm extends React.Component {
                   username: 'Guest',
                   password: '123456',
                   email: 'guest@guest.com'})
-              }}> Demo
+              }} className="demo-button"> Login with demo
             </button>
+        <br/>
+              <input type="text"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"
+              />
+            <br/>
+              <input type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+              />
+            <br/>
+          <input 
+            className="session-submit" 
+            type="submit" 
+            value={this.props.formType}
+          />
           </div>
+          <br/>    
+          Don't have an account? {this.props.navLink}
+            {this.renderErrors()}
         </form>
       </div>  
       )} else {
         formDisplay = (
         <div className='signup-form-container'>
           <form onSubmit={this.handleSubmit} className="signup-form-box">
-            Welcome to DistanceTraveled!
-            <br/>
-              Already have an account? {this.props.navLink}
-              {this.renderErrors()}
-            <div className="signup-form">
+          <div className="signup-form">
+            <button
+              onClick={(e) => {
+                e.preventDefault(); 
+                this.props.login({
+                  username: 'Guest',
+                  password: '123456',
+                  email: 'guest@guest.com'})
+              }} className="demo-button"> Log in with demo
+            </button>
               <br/>
-              <label>Username:
                 <input type="text"
+                  placeholder="Username"
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="signup-input"
                   />
-                </label>
                 <br/>
-              <div>
-                  <label>Email:
-                    <input type='text' 
-                      value={this.state.email} 
-                      onChange={this.update('email')}
-                    />
-                  <br/>
-                  </label>
-              </div>   
-                <label>Password:
-                  <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
+                  <input type='text' 
+                    placeholder="Email"
+                    value={this.state.email} 
+                    onChange={this.update('email')}
                     className="signup-input"
+                  />
+              <br/>  
+                <input type="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="signup-input"
                 />
-                </label>
-                <br/>
                 <br/>
               <input 
                 className="session-submit" 
@@ -134,6 +129,9 @@ class SessionForm extends React.Component {
                 value={this.props.formType}
               />
             </div>
+              <br/>
+              Already have an account? {this.props.navLink}
+              {this.renderErrors()}
           </form>
         </div>  
       );

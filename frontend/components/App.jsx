@@ -11,9 +11,11 @@ const App = () => (
     <nav className='nav-link'>
     <GreetingContainer />
     </nav>
+    <Switch>
     <AuthRoute path="/login" component={LogInFormContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />
     <AuthRoute path="/" component={SplashContainer}/>
+    </Switch>
   </div>
 );
 
