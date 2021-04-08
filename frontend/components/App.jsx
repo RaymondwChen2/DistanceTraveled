@@ -6,13 +6,12 @@ import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 
 const App = () => (
-  <div>
-    <header>
-    <h1>DistanceTravelled</h1>
+  <div className='nav-login-signup'>
+    <header className='nav-link'>
     <GreetingContainer />
-    </header>
     <AuthRoute path="/login" component={LogInFormContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />
+    </header>
   </div>
 );
 
