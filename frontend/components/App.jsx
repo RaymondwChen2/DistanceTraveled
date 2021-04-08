@@ -9,14 +9,12 @@ import SplashContainer from './splash/splash_container'
 const App = () => (
   <div className='app-container'>
     <nav className='nav-link'>
-      {/* <Route path='/' component={GreetingContainer}/> */}
     <GreetingContainer />
     </nav>
     <AuthRoute path="/login" component={LogInFormContainer} />
     <AuthRoute path="/signup" component={SignUpFormContainer} />
-  
     <AuthRoute path="/" component={SplashContainer}/>
-    </div>
+  </div>
 );
 
 export default App;
