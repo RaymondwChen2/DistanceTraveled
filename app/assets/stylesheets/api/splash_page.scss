@@ -1,8 +1,8 @@
 
-.login-signup{
+.nav-login-signup{
   display: flex;
   justify-content: space-between;
-  margin: 25px;
+  margin: 20px;
   padding: 0px 24px;
 }
 
@@ -12,6 +12,21 @@
   width: 200px;
 }
 
-.root{
-  background: image-url('splash.jpg')
+.splash-container{
+  display: flex;
+  height: 1600px;
+  width: 1300px;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  margin-top: 15px;
+}
+
+.splash{
+  width: 1300px;
+  height: 800px;
+  background-image: image-url('splash.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

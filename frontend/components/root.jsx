@@ -7,7 +7,6 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
       <App />
-      <div className='splash'></div>
     </HashRouter>
   </Provider>
 );
