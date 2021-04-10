@@ -1,1 +1,1 @@
-# json.partial! 'api/users/user', user: @user
+json.extract! @mapping, :latitude, :longitude, :route_id
