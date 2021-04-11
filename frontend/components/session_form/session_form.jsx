@@ -64,6 +64,12 @@ class SessionForm extends React.Component {
               }} className="demo-button"> Login with demo
             </button>
             <br/>
+            <div className="or">
+              <hr className='or-hr'/>
+              <span className='or-login-signup'> OR </span>
+              <hr className='or-hr'/>
+            </div>
+            <br/>
               <input type="text"
                 placeholder="Username"
                 value={this.state.username}

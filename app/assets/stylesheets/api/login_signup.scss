@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  // padding: 10px;
   width: 100%;
   height: 500px;
   background-color: #F0F0F0;
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  // padding: 10px;
   width: 100%;
   height: 500px;
   background-color: #F0F0F0;
@@ -55,7 +55,8 @@
 }
 
 .signup-button{
-  display: block;
+  display: flex;
+  justify-content: center;
     color: white;
     text-decoration: none;
     padding: 10px;
@@ -97,4 +98,19 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+
+.or{
+  display:flex;
+  color: #9297A3
+}
+
+.or-login-signup{
+  display: flex;
+  justify-content: space-between;
+}
+
+.or-hr{
+  width: 135px;
 }
