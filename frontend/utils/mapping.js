@@ -1,16 +1,17 @@
 
 
-export const createRoute = map => {
+export const createRoute = route => {
   return $.ajax({
     method: 'POST',
     url: '/api/mappings',
-    data: { map }
+    data: { route }
   })
 };
   
-export const fetchRoute = () =>{
+export const fetchRoutes = () =>{
   return $.ajax({
-    url: '/api/mappings'
+    url: '/api/mappings',
+    method: 'GET'
   })
 };
 

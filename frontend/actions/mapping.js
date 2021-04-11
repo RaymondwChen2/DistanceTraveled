@@ -1,25 +1,26 @@
 import * as APIUtil from '../utils/mapping';
 
 
-export const RECEIVE_ALL_MAPPING = 'RECEIVE_ALL_MAPPING'
+export const RECEIVE_ALL_MAPPINGS = 'RECEIVE_ALL_MAPPINGS'
 export const RECEIVE_MAPPING = 'RECEIVE_MAPPING'
 
-const receiveMappings = mappings => ({
-  type: RECEIVE_ALL_MAPPING,
+const fetchMappings = mappings => ({
+  type: RECEIVE_ALL_MAPPINGS,
   mappings
-})
+});
 
-const createMapping = mapping => ({
+const receiveMapping = route => ({
   type: RECEIVE_MAPPING,
-  mapping
-})
+  route
+});
 
-export const fetchRoute = () => dispatch => {
-  return APIUtil.fetchRoute()
-  .then(mappings => dispatch(receiveMappings(mappings)))
-}
+
+export const fetchRoutes = () => dispatch => {
+  return APIUtil.fetchRoutes()
+  .then(mappings => {
+    return dispatch(fetchMappings(mappings))})};
 
 export const createRoute = (route) => dispatch => {
   return APIUtil.createRoute(route)
-  .then(route =>  dispatch(createMapping(route)))
-}
+  .then(route => dispatch(receiveMapping(route)))};
+
