@@ -5,9 +5,7 @@ import TheMap from './map'
 class MappingRoutes extends React.Component {
   constructor(props){
     super(props)
-
   }
-
   componentDidMount(){
     this.props.fetchRoutes()
   }
@@ -26,7 +24,5 @@ class MappingRoutes extends React.Component {
     )
   }
 }
-
-
 
 export default MappingRoutes
