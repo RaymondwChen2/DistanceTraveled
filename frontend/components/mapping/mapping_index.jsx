@@ -1,17 +1,31 @@
 import React from 'react';
-const MappingRoutes = props => {
+import TheMap from './map'
+
+
+class MappingRoutes extends React.Component {
+  constructor(props){
+    super(props)
+
+  }
+
+  componentDidMount(){
+    this.props.fetchRoutes()
+  }
+  render(){
     return (
       <div>
         <h1>Mappings</h1>
         <ul>
           {
-            props.mappings.map(mapping => <li key={mapping.id}>
+            this.props.mappings.map((mapping, i) => <li key={i}>
               Routes: lat:{mapping.latitude}, long:{mapping.longitude}</li>)
           }
         </ul>
+        <TheMap/>
       </div>
     )
   }
+}
 
 
 
