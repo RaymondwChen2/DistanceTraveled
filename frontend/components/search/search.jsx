@@ -4,7 +4,7 @@ import MappingRoutes from '../mapping/mapping_index'
 const Search = (props) => (
   <div>
     <MappingRoutes/>
-    <TheMap/>
+    <TheMap props/>
   </div>
 );
 

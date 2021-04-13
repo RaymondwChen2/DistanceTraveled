@@ -19,7 +19,8 @@ class MappingRoutes extends React.Component {
               Routes: lat:{mapping.latitude}, long:{mapping.longitude}</li>)
           }
         </ul>
-        <TheMap/>
+        <TheMap mappings={this.props.mappings}/>
+        
       </div>
     )
   }

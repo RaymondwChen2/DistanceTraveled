@@ -5,4 +5,6 @@ class Mapping < ApplicationRecord
   belongs_to :route,
     foreign_key: :route_id,
     class_name: :Routeslog
+
+
 end

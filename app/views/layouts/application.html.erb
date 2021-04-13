@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['google']}" %>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_m52qyptlPY7x8qKJ8V6Wm64V8QJS2Zo&callback=initMap"
+  type="text/javascript"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>

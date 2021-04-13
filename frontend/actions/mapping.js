@@ -15,8 +15,8 @@ const receiveMapping = route => ({
 });
 
 
-export const fetchRoutes = () => dispatch => {
-  return APIUtil.fetchRoutes()
+export const fetchRoutes = (filter) => dispatch => {
+  return APIUtil.fetchRoutes(filter)
   .then(mappings => {
     return dispatch(fetchMappings(mappings))})};
 

@@ -8,10 +8,11 @@ export const createRoute = route => {
   })
 };
   
-export const fetchRoutes = () =>{
+export const fetchRoutes = (data) =>{
   return $.ajax({
     url: '/api/mappings',
-    method: 'GET'
+    method: 'GET',
+    data
   })
 };
 
