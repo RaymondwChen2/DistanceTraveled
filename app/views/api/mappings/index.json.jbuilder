@@ -1,6 +1,6 @@
 
 @mappings.each do |mapping|
   json.set! mapping.id do 
-    json.extract! mapping, :latitude, :longitude, :route_id
+    json.extract! mapping, :latitude, :longitude, :route_id, :id
   end
 end

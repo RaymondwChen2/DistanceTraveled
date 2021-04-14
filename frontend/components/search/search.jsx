@@ -1,11 +1,12 @@
 import React from 'react'
 import MappingRoutes from '../mapping/mapping_index'
 
-const Search = (props) => (
+const Search = ({mappings}) => (
   <div>
-    <MappingRoutes/>
-    <TheMap props/>
+    <MappingRoutes mappings={mappings}/>
+    <TheMap />
   </div>
 );
+debugger
 
 export default Search
