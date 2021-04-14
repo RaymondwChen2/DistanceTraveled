@@ -14,20 +14,19 @@ class TheMap extends React.Component {
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    this.map.addListener('click', (e)=> {
-    })
-  
-    this.MarkerManager.updateMarkers(this.props.mappings)
   }
   
   componentDidUpdate(){
-    this.MarkerManager.updateMarkers(this.props.mappings)
+    this.MarkerManager.updateMarkers()
   }
 
   render(){
     return (
-      <div id='map' ref={ map => this.mapNode = map}>
-        Map
+      <div>
+        <div>
+          <input type="button" onClick={()=>`${this.MarkerManager.deleteMarkers()}`} value='Delete Markers'/>
+        </div>
+        <div id='map' ref={ map => this.mapNode = map}></div>
       </div>
     )
   }
