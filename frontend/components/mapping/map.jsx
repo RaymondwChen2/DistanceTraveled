@@ -22,7 +22,6 @@ class TheMap extends React.Component {
   
   componentDidUpdate(){
     this.MarkerManager.updateMarkers(this.props.mappings)
-
   }
 
   render(){

@@ -3,7 +3,7 @@ import React from 'react'
 export default class MarkerManager  {
   constructor(map){
     this.map = map;
-    this.markers = {};
+    this.markers = [];
   }
 
   updateMarkers(mappings){
@@ -19,6 +19,17 @@ export default class MarkerManager  {
           marker.setMap(null)
         })
       }
+    });
+    this.map.addListener('click', (e)=>{
+      this.createNewMarker(e.latLng)
     })
+  };
+
+  createNewMarker(location){
+    const marker = new google.maps.Marker({
+      position: location,
+      map: this.map
+    })
+    this.markers.push(marker)
   }
 }
