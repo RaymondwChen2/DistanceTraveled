@@ -28,17 +28,10 @@ export default class MarkerManager  {
     this.clearMarkers();
     this.markers = [];
   }
+
+  undoMarker(){
+    if (this.markers.length > 0){
+      (this.markers.pop()).setMap(null)
+    }
+  };
 }
-// mappings.forEach(mapping => {
-//   if (!this.markers[mapping.id]){
-//     const newMarker = {
-//       position: {lat: mapping.latitude, lng: mapping.longitude},
-//       map: this.map
-//     }
-//     this.markers[mapping.id] = new google.maps.Marker(newMarker)
-//     const marker = this.markers[mapping.id]
-//     marker.addListener('click', (e)=> {
-//       marker.setMap(null)
-//     })
-//   }
-// });

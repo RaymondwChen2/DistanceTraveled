@@ -25,6 +25,7 @@ class TheMap extends React.Component {
       <div>
         <div>
           <input type="button" onClick={()=>`${this.MarkerManager.deleteMarkers()}`} value='Delete Markers'/>
+          <input type="button" onClick={()=>`${this.MarkerManager.undoMarker()}`} value='Undo'/>
         </div>
         <div id='map' ref={ map => this.mapNode = map}></div>
       </div>

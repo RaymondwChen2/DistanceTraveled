@@ -13,14 +13,7 @@ class MappingRoutes extends React.Component {
     return (
       <div>
         <h1>Mappings</h1>
-        {/* <ul>
-          {
-            this.props.mappings.map((mapping, i) => <li key={i}>
-              Routes: lat:{mapping.latitude}, long:{mapping.longitude}</li>)
-          }
-        </ul> */}
         <TheMap mappings={this.props.mappings}/>
-        
       </div>
     )
   }
