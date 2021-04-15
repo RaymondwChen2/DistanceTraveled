@@ -12,7 +12,6 @@ class MappingRoutes extends React.Component {
   render(){
     return (
       <div>
-        <h1>Mappings</h1>
         <TheMap mappings={this.props.mappings}/>
       </div>
     )

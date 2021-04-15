@@ -8,6 +8,16 @@ export default class MarkerManager  {
     this.map.addListener('click', (e)=>{
       this.createNewMarker(e.latLng)
     })
+    const poly = new google.maps.Polyline({
+      path: this.markers,
+      geodeisc: true,
+      strokeColor: "#FF0000",
+      strokeOpcaity: 1.0,
+      strokeWeight: 2
+    })
+    if (this.markers.length > 1){
+      poly.setMap(this.map)
+    }
   };
   createNewMarker(location){
     const marker = new google.maps.Marker({
@@ -34,4 +44,5 @@ export default class MarkerManager  {
       (this.markers.pop()).setMap(null)
     }
   };
+
 }

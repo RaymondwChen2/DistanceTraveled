@@ -8,7 +8,7 @@ class TheMap extends React.Component {
 
   componentDidMount() {
     const mapOptions = {
-      center: { lat: 37.795861, lng: -122.391817 }, 
+      center: { lat: 37.79916, lng: -122.40132 }, 
       zoom: 17,
       title: 'Hello World'
     };
@@ -22,7 +22,7 @@ class TheMap extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className='map-container'>
         <div>
           <input type="button" onClick={()=>`${this.MarkerManager.deleteMarkers()}`} value='Delete Markers'/>
           <input type="button" onClick={()=>`${this.MarkerManager.undoMarker()}`} value='Undo'/>
