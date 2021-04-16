@@ -1,24 +1,60 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Overview
+[DistanceTraveled](https://distancetraveled.herokuapp.com/#/) is a workout app where you can track how far you've traveled for each iof your workouts.
 
-* Ruby version
+## Technologies
 
-* System dependencies
+###Frontend
+* React
+* Redux
+* Javasript
+* Google maps API
 
-* Configuration
+###Backend
+* Ruby on Rails
+* Ajax
+* PostgreSQL
+* Google Maps API library
 
-* Database creation
+## Feature
+The user can add markers to the map where it will have polylines connecting each consecutive marker forming a route. User can also undo markers is they want to change up their route.
+```
+updateMarkers(mappings){
+    this.map.addListener('click', (e)=>{
+      this.createNewMarker(e.latLng)
+      this.path.push(e.latLng)
+    })
+  };
+  createNewMarker(location){
+    const marker = new google.maps.Marker({
+      position: location,
+      map: this.map
+    })
+    this.markers.push(marker)
+  }
+  setMapOnAll(map){
+    for (let i = 0; i < this.markers.length; i++) {
+      this.markers[i].setMap(map);
+    }
+  }
+  clearMarkers(){
+    this.setMapOnAll(null)
+  }
 
-* Database initialization
+  undoMarker(){
+    if (this.markers.length > 0){
+      (this.markers.pop()).setMap(null)
+      this.path.pop()
+    }
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## In-Progress
+* More functions to mapping
+   * The user can save the route they've created
+   * Route display the distance of the route 
+* Comment/ liking
+   * Users will be able to like and comment on their friend's routes.
+* Friending
+  * Will be able to look up a user and add them as a friend.
