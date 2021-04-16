@@ -6,19 +6,19 @@
 
 ## Technologies
 
-###Frontend
+### Frontend
 * React
 * Redux
 * Javasript
 * Google maps API
 
-###Backend
+### Backend
 * Ruby on Rails
 * Ajax
 * PostgreSQL
 * Google Maps API library
 
-## Feature
+## Features
 The user can add markers to the map where it will have polylines connecting each consecutive marker forming a route. User can also undo markers is they want to change up their route.
 ```
 updateMarkers(mappings){
