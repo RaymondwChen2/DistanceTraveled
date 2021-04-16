@@ -1,0 +1,17 @@
+// Place all the styles related to the api/mappings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.map-container{
+  display: flex;
+  align-items: center;
+  width: 1500px;
+  flex-direction: column;
+}
+
+.create-route-button{
+  display: flex;
+  justify-content: flex-end;
+  width: 1500px;
+}

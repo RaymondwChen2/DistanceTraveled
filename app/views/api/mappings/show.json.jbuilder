@@ -1,0 +1,1 @@
+json.extract! @mapping, :latitude, :longitude, :route_id

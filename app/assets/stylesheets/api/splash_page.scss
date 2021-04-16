@@ -6,6 +6,7 @@
   margin: 20px;
   width: 55%;
   padding: 0px 24px;
+  font-size: 12.25px;
 }
 
 .nav-li{
@@ -51,4 +52,19 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.dash-board-container{
+  display: flex;
+  justify-content: center;
+}
+
+.dash-board-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  width: 55%;
+  padding: 0px 24px;
+  font-size: 12.25px;
 }
