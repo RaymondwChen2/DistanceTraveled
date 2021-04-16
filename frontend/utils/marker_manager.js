@@ -33,11 +33,6 @@ export default class MarkerManager  {
   clearMarkers(){
     this.setMapOnAll(null)
   }
-  // deleteMarkers(){
-  //   this.clearMarkers();
-  //   this.poly.setMap(null)
-  //   this.markers = [];
-  // }
 
   undoMarker(){
     if (this.markers.length > 0){

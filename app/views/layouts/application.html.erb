@@ -4,9 +4,9 @@
     <title>DistanceTraveled</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_m52qyptlPY7x8qKJ8V6Wm64V8QJS2Zo&callback"
-  type="text/javascript"></script>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#%7BRails.application.credentials.google[:api_key]%7D" %>
+  <%# <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_m52qyptlPY7x8qKJ8V6Wm64V8QJS2Zo&callback"
+  type="text/javascript"></script> %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
