@@ -110,6 +110,12 @@ class SessionForm extends React.Component {
                   email: 'guest@guest.com'})
               }} className="demo-button"> Log in with demo
             </button>
+            <br/>
+            <div className="or">
+              <hr className='or-hr'/>
+              <span className='or-login-signup'> OR </span>
+              <hr className='or-hr'/>
+              </div>
               <br/>
                 <input type="text"
                   placeholder="Username"
