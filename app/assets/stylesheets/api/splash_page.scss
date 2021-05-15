@@ -17,37 +17,48 @@
 
 .splash-container{
   display: flex;
-  height: 2000px;
-  width: 65%;
+  height: 100%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: auto;
   position: relative;
-  margin-top: 15px;
+  // margin-top: 15px;
 }
 
 .splash{
   display: block;
   position: relative;
+  // padding-top: 500px;
   width: 1300px;
-  height: 1200px;
+  height: 500px;
   background-image: image-url('splash2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  object-position: 50% 100%;
+
 }
 
 .splash2{
   display: flex;
   width: 1300px;
-  height: 1200px;
+  height: 400px;
   background-image: image-url('splash3.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.splashDiag{
+  display: block;
+  position: absolute;
+  width: 1300px;
+  height: 150px;
+  background-image: image-url('white_strip.png');
+  transform: skewY(-2.7 deg);
+}
 .nav-container{
   display: flex;
   justify-content: center;
