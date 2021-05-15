@@ -24,20 +24,32 @@
   align-items: center;
   margin: auto;
   position: relative;
-  // margin-top: 15px;
 }
 
 .splash{
-  display: block;
-  position: relative;
-  // padding-top: 500px;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  flex-direction: column;
   width: 1300px;
   height: 500px;
   background-image: image-url('splash2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  object-position: 50% 100%;
+
+  h2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 35%;
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    border-top: 6px white solid;
+    border-bottom: 6px white solid;
+    
+  }
 
 }
 
