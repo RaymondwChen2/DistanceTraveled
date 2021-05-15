@@ -44,7 +44,7 @@
 .splash2{
   display: flex;
   width: 1300px;
-  height: 400px;
+  height: 600px;
   background-image: image-url('splash3.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -57,7 +57,7 @@
   width: 1300px;
   height: 150px;
   background-image: image-url('white_strip.png');
-  transform: skewY(-2.7 deg);
+  transform: skewY(-2.5deg);
 }
 .nav-container{
   display: flex;
