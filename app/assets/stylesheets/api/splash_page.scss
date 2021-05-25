@@ -60,9 +60,8 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    font-weight: 400px;
     color: white;
-    font-size: 14;
-    font-weight: 400;
     background-color: #1DDD7C;
     width: 300px;
     height: 35px;
@@ -93,7 +92,7 @@
   width: 1300px;
   height: 150px;
   background-image: image-url('white_strip.png');
-  transform: skewY(-2.5deg);
+  transform: skewY(-2.7deg);
 }
 .nav-container{
   display: flex;

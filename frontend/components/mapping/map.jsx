@@ -1,5 +1,6 @@
 import React from 'react'
 import MarkerManager from '../../utils/marker_manager'
+{window.googleAPIKey}
 
 class TheMap extends React.Component {
   constructor(props){

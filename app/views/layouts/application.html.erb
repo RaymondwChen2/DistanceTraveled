@@ -5,13 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_m52qyptlPY7x8qKJ8V6Wm64V8QJS2Zo&callback"
-  type="text/javascript"></script>
+
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+  <script src='https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.google[:api_key]%>'
+  type="text/javascript"></script>
     <%= yield %>
   </body>
 </html>
