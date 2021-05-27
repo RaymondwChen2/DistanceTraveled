@@ -30,7 +30,8 @@ export default class MarkerManager  {
       position: location,
       map: this.map
     })
-    this.markers.push({location: {lat : marker.position.lat(), lng : marker.position.lng()}, stopover: false})
+    this.markers.push({location: {lat : marker.position.lat(), lng : marker.position.lng()}, stopover: true})
+    // debugger
   }
 
   setMapOnAll(map){
@@ -39,10 +40,10 @@ export default class MarkerManager  {
     }
   }
 
-
   calculateAndDisplayRoute(directionsService, directionsRenderer) {
     const waypts = this.markers
-    let LatLng = `${waypts[0].location.lat}, ${waypts[0].location.lng}`
+    const origin = `${waypts[0].location.lat}, ${waypts[0].location.lng}`
+    const destination = `${waypts[waypts.length - 1].location.lat}, ${waypts[waypts.length - 1].location.lng}`
     const checkboxArray = document.getElementById("waypoints");
     // for (let i = 0; i < waypts.length; i++) {
     //   if (checkboxArray.options[i].selected) {
@@ -55,8 +56,8 @@ export default class MarkerManager  {
   
     directionsService.route(
       {
-        origin: LatLng,
-        destination: LatLng,
+        origin: origin,
+        destination: destination,
         waypoints: waypts,
         optimizeWaypoints: false,
         travelMode: google.maps.TravelMode.WALKING,
@@ -83,23 +84,6 @@ export default class MarkerManager  {
       }
     );
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   clearMarkers(){
