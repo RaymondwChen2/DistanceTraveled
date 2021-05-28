@@ -27,8 +27,7 @@ class TheMap extends React.Component {
     return (
       <div className='map-container'>
         <div>
-          {/* <input type="button" onClick={()=>`${this.MarkerManager.deleteMarkers()}`} value='Delete Markers'/> */}
-          <input type="button" onClick={()=>`${this.MarkerManager.undoMarker()}`} value='Undo'/>
+          <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
         </div>
         <div id='map' ref={ map => this.mapNode = map}></div>
         <div id='directions-panel' ></div>

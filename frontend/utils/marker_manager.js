@@ -2,41 +2,47 @@
 export default class MarkerManager {
   constructor(map){
     this.map = map;
-    // this.markers = [];
     this.waypts = [];
+    this.directionsService = new google.maps.DirectionsService();
+    this.directionsRenderer = new google.maps.DirectionsRenderer();
   }
 
+    
+  undoMarker(){
+    // this.waypts = this.waypts.slice(0,-1)
+    // console.log(route)
+    // if (route.legs.length >= 0){
+      //   this.waypts.pop()
+        this.directionsRenderer.setMap(null)
+        this.waypts = []
+        // this.directionsRenderer.setMap(this.map)
+      // }
+    }
+
   updateMarkers(){
-    const directionsService = new google.maps.DirectionsService();
-    const directionsRenderer = new google.maps.DirectionsRenderer();
     this.map.addListener('click', (e)=>{
-      // this.createNewMarker(e.latLng)
       this.waypts.push({location:{lat: e.latLng.lat(), lng: e.latLng.lng()}, stopover: true})
-      console.log(this.waypts)
-      this.calculateAndDisplayRoute(directionsService, directionsRenderer)
-      directionsRenderer.setMap(this.map)
+      this.directionsRenderer.setMap(this.map)
+      // this.createNewMarker(e.latLng)
+      this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
     })
   };
+
 
   // createNewMarker(location){
   //   const marker = new google.maps.Marker({
   //     position: location,
   //     map: this.map
   //   })
-  //   this.markers.push({location: {lat : marker.position.lat(), lng : marker.position.lng()}, stopover: true})
-  // }
-
-  // setMapOnAll(map){
-  //   for (let i = 0; i < this.markers.length; i++) {
-  //     this.markers[i].setMap(map);
-  //   }
+  //   this.waypts.push({location: {lat : marker.position.lat(), lng : marker.position.lng()}, stopover: true})
   // }
 
   calculateAndDisplayRoute(directionsService, directionsRenderer) {
-    const waypts = this.markers
     const origin = `${this.waypts[0].location.lat}, ${this.waypts[0].location.lng}`
     const destination = `${this.waypts[this.waypts.length - 1].location.lat}, ${this.waypts[this.waypts.length - 1].location.lng}`
     
+    if (destination != undefined){
+
       directionsService.route(
         {
           origin: origin,
@@ -55,7 +61,7 @@ export default class MarkerManager {
             // For each route, display summary information.
             for (let i = 0; i < route.legs.length; i++) {
               // const routeSegment = i + 1;
-              const routeSegment = i + 0;
+              const routeSegment = i + 1;
               summaryPanel.innerHTML +=
                 "<b>Route Segment: " + routeSegment + "</b><br>";
               summaryPanel.innerHTML += route.legs[i].start_address + " to ";
@@ -68,17 +74,21 @@ export default class MarkerManager {
         }
       );
     }
-
-
-
-  clearMarkers(){
-    this.setMapOnAll(null)
   }
 
-  undoMarker(){
-    if (this.markers.length > 0){
-      (this.markers.pop()).setMap(null)
-      this.path.pop()
-    }
   }
-}
+  
+  
+  // clearMarkers(){
+  //   this.setMapOnAll(null)
+  // }
+
+// setMapOnAll(map){
+//   for (let i = 0; i < this.waypts.length; i++) {
+//     this.waypts[i].setMap(map);
+//   }
+// }
+
+
+
+ 
