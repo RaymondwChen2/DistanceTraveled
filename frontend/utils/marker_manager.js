@@ -9,21 +9,16 @@ export default class MarkerManager {
 
     
   undoMarker(){
-    // this.waypts = this.waypts.slice(0,-1)
-    // console.log(route)
-    // if (route.legs.length >= 0){
-      //   this.waypts.pop()
-        this.directionsRenderer.setMap(null)
-        this.waypts = []
-        // this.directionsRenderer.setMap(this.map)
-      // }
+      this.waypts.pop()
+      this.directionsRenderer.setMap(this.map)
+      this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
     }
 
   updateMarkers(){
     this.map.addListener('click', (e)=>{
       this.waypts.push({location:{lat: e.latLng.lat(), lng: e.latLng.lng()}, stopover: true})
+      console.log(this.directionsService)
       this.directionsRenderer.setMap(this.map)
-      // this.createNewMarker(e.latLng)
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
     })
   };
@@ -41,8 +36,6 @@ export default class MarkerManager {
     const origin = `${this.waypts[0].location.lat}, ${this.waypts[0].location.lng}`
     const destination = `${this.waypts[this.waypts.length - 1].location.lat}, ${this.waypts[this.waypts.length - 1].location.lng}`
     
-    if (destination != undefined){
-
       directionsService.route(
         {
           origin: origin,
@@ -76,7 +69,6 @@ export default class MarkerManager {
     }
   }
 
-  }
   
   
   // clearMarkers(){
