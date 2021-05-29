@@ -1,2 +1,0 @@
-class Routelog < ApplicationRecord
-end

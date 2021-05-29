@@ -6,15 +6,15 @@ export default class MarkerManager {
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer = new google.maps.DirectionsRenderer();
   }
-
-    
+  
+  
   undoMarker(){
-      this.waypts.pop()
-      console.log(this.waypts)
-      // this.directionsRenderer.setMap(this.map)
-      this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
-    }
-
+    this.waypts.pop()
+    console.log(this.waypts)
+    // this.directionsRenderer.setMap(this.map)
+    this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
+  }
+  
   updateMarkers(){
     this.map.addListener('click', (e)=>{
       this.waypts.push({location:{lat: e.latLng.lat(), lng: e.latLng.lng()}, stopover: false})
@@ -22,21 +22,21 @@ export default class MarkerManager {
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
     })
   };
-
-
+  
+  
   // createNewMarker(location){
-  //   const marker = new google.maps.Marker({
-  //     position: location,
-  //     map: this.map
-  //   })
-  //   this.waypts.push({location: {lat : marker.position.lat(), lng : marker.position.lng()}, stopover: true})
-  // }
-
-  calculateAndDisplayRoute(directionsService, directionsRenderer) {
-    const origin = `${this.waypts[0].location.lat}, ${this.waypts[0].location.lng}`
-    const destination = `${this.waypts[this.waypts.length - 1].location.lat}, ${this.waypts[this.waypts.length - 1].location.lng}`
-    let totalDistance = 0;
-      directionsService.route(
+    //   const marker = new google.maps.Marker({
+      //     position: location,
+      //     map: this.map
+      //   })
+      //   this.waypts.push({location: {lat : marker.position.lat(), lng : marker.position.lng()}, stopover: true})
+      // }
+      
+      calculateAndDisplayRoute(directionsService, directionsRenderer) {
+        let totalDistance = 0;
+        const origin = `${this.waypts[0].location.lat}, ${this.waypts[0].location.lng}`
+        const destination = `${this.waypts[this.waypts.length - 1].location.lat}, ${this.waypts[this.waypts.length - 1].location.lng}`
+        directionsService.route(
         {
           origin: origin,
           destination: destination,
