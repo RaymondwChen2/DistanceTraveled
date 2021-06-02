@@ -66,10 +66,9 @@ class TheMap extends React.Component {
           <label>Description:
             <textarea value={this.state.description} onChange={this.updateDescription}/>
           </label>
-          <label>Distance: </label>
+          <label id='directions-panel'>Distance: </label>
           <input type="submit" value="Create Route" />
         </form>
-        <div id='directions-panel' ></div>
       </div>
     )
   }

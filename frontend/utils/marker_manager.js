@@ -2,8 +2,8 @@
 export default class MarkerManager {
   constructor(map){
     this.map = map;
-    this.totalDistance = 0
     this.waypts = [];
+    this.summaryPanel = document.getElementById("directions-panel")
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer = new google.maps.DirectionsRenderer();
   }
@@ -19,7 +19,6 @@ export default class MarkerManager {
       this.waypts.push({location:{lat: e.latLng.lat(), lng: e.latLng.lng()}, stopover: false})
       this.directionsRenderer.setMap(this.map)
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
-      console.log(this.totalDistance)
     })
   };
   
@@ -38,29 +37,18 @@ export default class MarkerManager {
         if (status === "OK" && response) {
           directionsRenderer.setDirections(response);
           const route = response.routes[0];
-          const summaryPanel = document.getElementById("directions-panel");
-          summaryPanel.innerHTML = "";
+          this.summaryPanel.innerHTML = "";
           
           // For each route, display summary information.
           for (let i = 0; i < route.legs.length; i++) {
-            // const routeSegment = i + 1;
             const routeSegment = i + 1;
+            // console.log(route.legs)
+            // debugger
             // summaryPanel.innerHTML +=
-            // "<b>Route Segment: " + routeSegment + "</b><br>";
-            // summaryPanel.innerHTML += route.legs[i].start_address + " to ";
-            // summaryPanel.innerHTML += route.legs[i].end_address + "<br>";
-            // summaryPanel.innerHTML += route.legs[i].distance.text + "<br><br>";
-            // summaryPanel.innerHTML +=
-            // (totalDistance += Number(route.legs[i].distance.text.split(" ")[0])) + "<br><br>"
+            // (this.totalDistance) + "<br><br>"
             // summaryPanel.innerHTML += (totalDistance) + "<br><br>"
             // summaryPanel.innerHTML += this.totalDistance + '<br>'
-            if (route.legs[i].distance.text.includes('ft')){
-              this.totalDistance += Number(route.legs[i].distance.text.split(" ")[0])
-              // console.log(this.totalDistance)
-            } else if (route.legs[i].distance.text.includes('mi')){
-              this.totalDistance += (Number(route.legs[i].distance.text.split(" ")[0] * 5280.0))
-              // console.log(this.totalDistance)
-            }
+            this.summaryPanel.innerHTML += 'Distance: ' + route.legs[i].distance.text + '<br>'
           }
         } else {
           window.alert("Directions request failed due to " + status);
@@ -71,10 +59,3 @@ export default class MarkerManager {
   }
   
   
-  // createNewMarker(location){
-    //   const marker = new google.maps.Marker({
-      //     position: location,
-      //     map: this.map
-      //   })
-      //   this.waypts.push({location: {lat : marker.position.lat(), lng : marker.position.lng()}, stopover: true})
-      // }
