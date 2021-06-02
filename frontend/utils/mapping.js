@@ -9,7 +9,6 @@ export const createRoute = route => {
 };
   
 export const fetchRoutes = (data) =>{
-  debugger
   return $.ajax({
     url: `/api/mappings`,
     method: 'GET',

@@ -7,7 +7,6 @@ export default class MarkerManager {
     this.directionsRenderer = new google.maps.DirectionsRenderer();
   }
   
-  
   undoMarker(){
     this.waypts.pop()
     console.log(this.waypts)
@@ -76,19 +75,3 @@ export default class MarkerManager {
       );
     }
   }
-
-  
-  
-  // clearMarkers(){
-  //   this.setMapOnAll(null)
-  // }
-
-// setMapOnAll(map){
-//   for (let i = 0; i < this.waypts.length; i++) {
-//     this.waypts[i].setMap(map);
-//   }
-// }
-
-
-
- 
