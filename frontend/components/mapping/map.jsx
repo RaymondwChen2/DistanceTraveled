@@ -12,8 +12,11 @@ class TheMap extends React.Component {
       description: "",
       distance: ""
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateTitle = this.updateTitle.bind(this)
+    this.updateDescription = this.updateDescription.bind(this)
   }
-
+  
   componentDidMount() {
     const mapOptions = {
       center: { lat: 37.79916, lng: -122.40132 }, 
@@ -22,12 +25,10 @@ class TheMap extends React.Component {
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   componentDidUpdate(){
     this.MarkerManager.updateMarkers()
-    console.log(this.MarkerManager.waypts)
   }
 
   handleSubmit(e){
@@ -46,31 +47,26 @@ class TheMap extends React.Component {
     this.setState({description: e.target.value})
   }
 
-  updateWaypoints(e){
-    this.setState({waypoints: this.MarkerManager.waypts})
-    // console.log(this.state.waypoints)
-  }
+  // updateDistance(e){
+  //   this.setState({distance: e.target.value})
+  // }
 
   render(){
+    let routeInner = document.getElementById('routeInner')
     return (
       <div className='map-container' >
         <div>
           <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
         </div>
         <div id='map' ref={ map => this.mapNode = map}></div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='map-form'>
           <label>Title:
             <input type="text" value={this.state.title} onChange={this.updateTitle}/>
           </label>
           <label>Description:
             <textarea value={this.state.description} onChange={this.updateDescription}/>
           </label>
-          <label>Route:
-            <input type="text" value={this.state.waypoints} onChange={this.updateWaypoints}/>
-          </label>
-          <label>Distance:
-            
-          </label>
+          <label>Distance: </label>
           <input type="submit" value="Create Route" />
         </form>
         <div id='directions-panel' ></div>
