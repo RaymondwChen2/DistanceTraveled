@@ -36,23 +36,19 @@ class TheMap extends React.Component {
 
     this.setState({
       waypoints: this.MarkerManager.waypts,
-      // distance: this.MarkerManager.calculateAndDisplayRoute().route.legs.distance.text
     })
   }
   updateTitle(e){
     this.setState({title: e.target.value})
+
   }
 
   updateDescription(e){
     this.setState({description: e.target.value})
   }
 
-  // updateDistance(e){
-  //   this.setState({distance: e.target.value})
-  // }
 
   render(){
-    let routeInner = document.getElementById('routeInner')
     return (
       <div className='map-container' >
         <div>
