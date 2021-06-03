@@ -6,16 +6,14 @@
 .map-container{
   display: flex;
   justify-content: space-around;
-  align-items: center;
   width: 1500px;
-  flex-direction: column;
 }
 
-.create-route-button{
-  display: flex;
-  justify-content: flex-end;
-  width: 1500px;
-}
+// .create-route-button{
+//   display: flex;
+//   justify-content: flex-end;
+//   width: 1500px;
+// }
 
 .map-form{
   display: flex;

@@ -50,21 +50,25 @@ class TheMap extends React.Component {
 
   render(){
     return (
-      <div className='map-container' >
+      <div className='map-container'>
+        <div>
+          <form onSubmit={this.handleSubmit} className='map-form' >
+            <label>Title:
+              <br/>
+              <input type="text" value={this.state.title} onChange={this.updateTitle}/>
+            </label>
+            <label>Description:
+              <br/>
+              <textarea value={this.state.description} onChange={this.updateDescription}/>
+            </label>
+            <label id='directions-panel'>Distance: </label>
+            <input type="submit" value="Create Route" />
+          </form>
+        </div>
         <div>
           <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
+          <div id='map' ref={ map => this.mapNode = map}></div>
         </div>
-        <div id='map' ref={ map => this.mapNode = map}></div>
-        <form onSubmit={this.handleSubmit} className='map-form'>
-          <label>Title:
-            <input type="text" value={this.state.title} onChange={this.updateTitle}/>
-          </label>
-          <label>Description:
-            <textarea value={this.state.description} onChange={this.updateDescription}/>
-          </label>
-          <label id='directions-panel'>Distance: </label>
-          <input type="submit" value="Create Route" />
-        </form>
       </div>
     )
   }
