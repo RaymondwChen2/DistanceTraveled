@@ -15,4 +15,4 @@ const mappingReducer = (state = {}, action) => {
   }
 }
 
-export default mappingReducer
+export default mappingReducer;

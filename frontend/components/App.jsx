@@ -7,6 +7,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import SplashContainer from './splash/splash_container'
 // import SearchContainer from './search/search_container'
 import MappingIndexContainer from './mapping/mapping_index_container'
+import RoutesLogIndexContainer from "./routeslog/routeslog_index_container"
 
 
 
@@ -19,6 +20,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <ProtectedRoute exact path="/mapping" component={MappingIndexContainer}/> 
+      <Route exact path="/users/:id/routeslog" component={RoutesLogIndexContainer}/> 
       <AuthRoute exact path="/" component={SplashContainer}/>
     </Switch>
 
