@@ -2,8 +2,8 @@ class Api::MappingsController < ApplicationController
   # before_action :require_login, only: [:create]
 
   def index
-    @mappings = Mapping.all
-    render :index
+    @routeslog = Routeslog.find(params[:routeslog_id])
+    render json: @routeslog.mappings
   end
 
   def create

@@ -1,6 +1,5 @@
 import React from 'react';
 import TheMap from './map'
-import MapForm from './mapping_form'
 
 
 class MappingRoutes extends React.Component {
@@ -14,9 +13,11 @@ class MappingRoutes extends React.Component {
     return (
       <div>
         <ul>
+          <div>gaergaerherheeraher</div>
         </ul>
+        <div className='css-map'>
         <TheMap mappings={this.props.mappings}/>
-        {/* <Mapform /> */}
+        </div>
       </div>
     )
   }

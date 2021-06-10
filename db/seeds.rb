@@ -18,6 +18,18 @@ demo = User.create!(demo)
 user1 = User.create!(user1)
 user2 = User.create!(user2)
 
+
+
+route1 = Routeslog.create!(route_title: 'Ferry Builing run', distance: 2, user_id: demo.id, description: 'asd')
+map1 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
+map2 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
+map3 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
+
+
+route2 = Routeslog.create!(route_title: 'second', distance: 2, user_id: demo.id, description: 'asd')
+
+
+
 # ########## ROUTE LOG ############
 # routeslog1 = {route_title: 'Around the lake', distance: 3, user_id: user1.id}
 # routeslog2 = {route_title: 'Ferry Builing run', distance: 2, user_id: user2.id}
@@ -33,13 +45,5 @@ user2 = User.create!(user2)
 
 # mapping1 = Mapping.create!(mapping1)
 # mapping2 = Mapping.create!(mapping2)
-
-
-route1 = Routeslog.create!(route_title: 'Ferry Builing run', distance: 2, user_id: user1.id, description: 'asd')
-map1 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
-map2 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
-map3 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
-
-
 
 

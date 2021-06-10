@@ -62,10 +62,10 @@ class TheMap extends React.Component {
               <textarea value={this.state.description} onChange={this.updateDescription}/>
             </label>
             <label id='directions-panel'>Distance: </label>
-            <input type="submit" value="Create Route" />
+            <input type="submit" value="Save Route" />
           </form>
         </div>
-        <div>
+        <div className='the-map-div'>
           <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
           <div id='map' ref={ map => this.mapNode = map}></div>
         </div>
