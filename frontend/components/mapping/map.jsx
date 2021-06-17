@@ -51,7 +51,6 @@ class TheMap extends React.Component {
   render(){
     return (
       <div className='map-container'>
-        <div>
           <form onSubmit={this.handleSubmit} className='map-form' >
             <label>Title:
               <br/>
@@ -64,7 +63,6 @@ class TheMap extends React.Component {
             <label id='directions-panel'>Distance: </label>
             <input type="submit" value="Save Route" />
           </form>
-        </div>
         <div className='the-map-div'>
           <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
           <div id='map' ref={ map => this.mapNode = map}></div>

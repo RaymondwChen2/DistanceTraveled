@@ -5,8 +5,9 @@
 
 .map-container{
   display: flex;
-  // justify-content: space-evenly;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 // .create-route-button{
@@ -15,11 +16,10 @@
 //   width: 1500px;
 // }
 
-// .the-map-div{
-//   display: flex;
-//   flex-direction: column;
-//   // width: 4000px;
-// }
+.the-map-div{
+  width: 100%;
+  height: 88vh;
+}
 
 .map-form{
   display: flex;
@@ -32,6 +32,11 @@
   border-radius: 5px;
 }
 
-// .css-map{
-//   width: 5000px;
-// }
+.css-map{
+  width: 100%;
+  height: 100%;
+}
+
+.content{
+  width: 100%;
+}
