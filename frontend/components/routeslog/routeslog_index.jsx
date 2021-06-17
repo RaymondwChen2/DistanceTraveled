@@ -20,7 +20,7 @@ render(){
   }
   debugger
   return(
-    <div>{this.props.routeslog[0].route_title}</div>
+    <div>{this.props.routeslog}</div>
   )
 }
 }

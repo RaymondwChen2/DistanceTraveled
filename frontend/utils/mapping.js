@@ -10,7 +10,7 @@ export const createRoute = route => {
   
 export const fetchRoutes = (data) =>{
   return $.ajax({
-    url: `/api/mappings`,
+    url: `/api/${data}/mappings`,
     method: 'GET',
     data
   })

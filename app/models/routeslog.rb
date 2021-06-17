@@ -1,5 +1,5 @@
 class Routeslog < ApplicationRecord
-  validates :route_title, :distance, presence: true
+  validates :route_title, :distance, :description, :waypoints, :distance, presence: true
 
   has_many :mappings,
     foreign_key: :route_id,

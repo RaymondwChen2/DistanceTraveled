@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_033100) do
+ActiveRecord::Schema.define(version: 2021_06_17_194705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "mappings", force: :cascade do |t|
-    t.float "latitude", null: false
-    t.float "longitude", null: false
-    t.integer "route_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "routeslogs", force: :cascade do |t|
     t.string "route_title", null: false
@@ -29,9 +21,10 @@ ActiveRecord::Schema.define(version: 2021_05_29_033100) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "lat"
-    t.float "lng"
     t.string "description"
+    t.string "waypoints"
+    t.index ["route_title"], name: "index_routeslogs_on_route_title"
+    t.index ["user_id"], name: "index_routeslogs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

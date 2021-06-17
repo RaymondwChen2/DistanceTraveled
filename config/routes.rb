@@ -6,12 +6,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create] do
       resources :routeslog, only: [:index]
     end
+    
     resource :session, only: [:create, :destroy]
-    resources :routeslog, except: [:index] do
-      resources :mappings, only: [:index, :show]
-    end
+    resources :routeslogs, only: [:show, :create, :destroy, :update]
 
-    resources :mappings, only: [:create]
+
   end
   root to: 'static_pages#root'
 end

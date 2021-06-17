@@ -5,6 +5,16 @@ export const RECEIVE_ALL_ROUTESLOGS = 'RECEIVE_ALL_ROUTESLOGS'
 const receiveRoutesLogs = routes => ({
   type: RECEIVE_ALL_ROUTESLOGS,
   routes
+});
+
+const removeRoute = route => ({
+  type: RECEIVE_ROUTE,
+  route
+});
+
+const receiveRouteLogsErrors = errors => ({
+  type: RECEIVE_ROUTE_ERRORS,
+  errors
 })
 
 // action dispatch from my component passing userId to the ajax request
