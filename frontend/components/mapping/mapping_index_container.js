@@ -6,6 +6,7 @@ const mSTP = state => {
   return {
     mappings: Object.values(state.entities.mappings)
   }
+  return {}
 };
 
 const mDTP = dispatch => ({

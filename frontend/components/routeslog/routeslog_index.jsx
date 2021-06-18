@@ -9,7 +9,6 @@ class TheRoutesLog extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     this.props.fetchRoutesLogs(this.props.match.params.id)
   }
 
@@ -18,7 +17,6 @@ render(){
   if (Object.values(this.props.routeslog).length == 0){
     return null
   }
-  debugger
   return(
     <div>{this.props.routeslog}</div>
   )

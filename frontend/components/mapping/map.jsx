@@ -1,13 +1,12 @@
 import React from 'react'
 import MarkerManager from '../../utils/marker_manager'
 
-
 class TheMap extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      waypoints: "",
+      waypoints: [],
       title: "",
       description: "",
       distance: ""
@@ -38,6 +37,7 @@ class TheMap extends React.Component {
       waypoints: this.MarkerManager.waypts,
     })
   }
+
   updateTitle(e){
     this.setState({title: e.target.value})
 
@@ -51,6 +51,7 @@ class TheMap extends React.Component {
   render(){
     return (
       <div className='map-container'>
+        <div>
           <form onSubmit={this.handleSubmit} className='map-form' >
             <label>Title:
               <br/>
@@ -63,9 +64,10 @@ class TheMap extends React.Component {
             <label id='directions-panel'>Distance: </label>
             <input type="submit" value="Save Route" />
           </form>
+        </div>
         <div className='the-map-div'>
           <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
-          <div id='map' ref={ map => this.mapNode = map}></div>
+            <div id='map' ref={ map => this.mapNode = map}></div>
         </div>
       </div>
     )

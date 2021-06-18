@@ -28,7 +28,7 @@ export const updateRouteLog = route => {
   })
 }
 
-export const deelteRouteLog = routeId => {
+export const deleteRouteLog = routeId => {
   return $.ajax({
     url: `api/routeslogs/${routeId}`,
     method: 'DELETE'

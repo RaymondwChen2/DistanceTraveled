@@ -5,16 +5,20 @@ import TheMap from './map'
 class MappingRoutes extends React.Component {
   constructor(props){
     super(props)
+    debugger
   }
   componentDidMount(){
-    this.props.fetchRoutes()
+    // debugger
+    // this.props.fetchRoutes()
   }
   render(){
     return (
-      <div className='content'>
-        <div className='css-map'>
+      <div>
+        {/* <div className='css-map'> */}
         <TheMap mappings={this.props.mappings}/>
-        </div>
+        {/* <TheMap/> */}
+        
+        {/* </div> */}
       </div>
     )
   }

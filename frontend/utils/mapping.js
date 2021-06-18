@@ -3,7 +3,7 @@
 export const createRoute = route => {
   return $.ajax({
     method: 'POST',
-    url: '/api/mappings',
+    url: '/api/routeslogs',
     data: { route }
   })
 };

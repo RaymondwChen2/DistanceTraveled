@@ -10,11 +10,12 @@ export default class MarkerManager {
   
   undoMarker(){
     this.waypts.pop()
-    // this.directionsRenderer.setMap(this.map)
     this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
   }
   
   updateMarkers(){
+    // console.log('click')
+    // debugger
     this.map.addListener('click', (e)=>{
       this.waypts.push({location:{lat: e.latLng.lat(), lng: e.latLng.lng()}, stopover: false})
       this.directionsRenderer.setMap(this.map)
