@@ -5,7 +5,6 @@ import TheMap from './map'
 class MappingRoutes extends React.Component {
   constructor(props){
     super(props)
-    debugger
   }
   componentDidMount(){
     // debugger

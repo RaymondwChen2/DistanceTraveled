@@ -24,12 +24,9 @@ class TheMap extends React.Component {
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-  }
-  
-  componentDidUpdate(){
     this.MarkerManager.updateMarkers()
   }
-
+  
   handleSubmit(e){
     e.preventDefault();
 
