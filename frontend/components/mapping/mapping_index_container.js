@@ -1,17 +1,24 @@
 import {connect} from 'react-redux'
 import MappingRoutes from './mapping_index'
-import { fetchRoutes, createRoute } from '../../actions/mapping'
+import TheMap from './map'
+import { fetchRoutesLogs, createRouteLog, deleteRouteLog } from '../../actions/routeslog'
+// import { deleteRouteLog } from '../../utils/routeslog';
 
 const mSTP = state => {
   return {
-    mappings: Object.values(state.entities.mappings)
+    // mappings: Object.values(state.entities.mappings)
+    
   }
-  return {}
+
 };
 
-const mDTP = dispatch => ({
-  fetchRoutes: () => dispatch(fetchRoutes()),
-  createRoute: route => dispatch(createRoute(route))
-})
+const mDTP = dispatch => {
+  debugger
+  return{
+    fetchRoutesLogs: (userId) => dispatch(fetchRoutesLogs(userId)),
+    createRouteLog: (route) => dispatch(createRouteLog(route)),
+    deleteRouteLog: (routeId) => dispatch(deleteRouteLog(routeId))
+  }
+}
 
-export default connect(mSTP, mDTP)(MappingRoutes)
+export default connect(mSTP, mDTP)(TheMap)

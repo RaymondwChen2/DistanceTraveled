@@ -12,17 +12,17 @@ export const fetchRoutelog = routeId => {
   })
 }
 
-export const createRouteLog = route => {
+export const createRouteLog = routeslog => {
   return $.ajax({
-    url: 'api/routeslogs',
+    url: 'api/routeslog',
     method: 'POST',
-    data: { route }
+    data: { routeslog }
   })
 }
 
 export const updateRouteLog = route => {
   return $.ajax({
-    url: `api/routeslogs/${route.id}`,
+    url: `api/routeslog/${route.id}`,
     method: 'PATCH',
     data: { route }
   })
@@ -30,7 +30,7 @@ export const updateRouteLog = route => {
 
 export const deleteRouteLog = routeId => {
   return $.ajax({
-    url: `api/routeslogs/${routeId}`,
+    url: `api/routeslog/${routeId}`,
     method: 'DELETE'
   })
 }

@@ -1,3 +1,4 @@
+require 'byebug'
 class Api::RouteslogController < ApplicationController
 
   def index
@@ -7,17 +8,18 @@ class Api::RouteslogController < ApplicationController
   end
 
   def show
-    @route = Route.find_by(id: params[:id])
-    if @route
-      render :show
-    else
-      render json: ['Route does not exist'], status: 404
-    end
+    debugger
+    @route = Routeslog.find(params[:id])
+    # if @route
+    #   render :show
+    # else
+    #   render json: ['Route does not exist'], status: 404
+    # end
     # api_routeslog GET    /api/routeslog/:id(.:format)         
   end
 
   def create
-    @route = Route.new(route_params)
+    @route = Routeslog.new(route_params)
     @route.user_id = current_user.id
 
     if @route.save
@@ -28,7 +30,7 @@ class Api::RouteslogController < ApplicationController
   end
 
   def update
-    @route = Route.find_by(id: params[:id])
+    @route = Routeslog.find_by(id: params[:id])
     
     if @route
       if @route.update(route_params)
@@ -42,7 +44,7 @@ class Api::RouteslogController < ApplicationController
   end
 
   def destroy
-    route = Route.find_by(id: params[:id])
+    route = Routeslog.find_by(id: params[:id])
     @user = current_user
 
     if route 
@@ -59,6 +61,6 @@ class Api::RouteslogController < ApplicationController
 
   private
   def route_params
-    params.require(:route).permit(:route_title, :description, :distance, :waypoints, :user_id)
+    params.require(:routeslog).permit(:route_title, :description, :distance, :waypoints, :user_id)
   end
 end

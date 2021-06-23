@@ -6,7 +6,6 @@
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
-Mapping.delete_all
 Routeslog.delete_all
 
 # ########### USERS #############
@@ -21,9 +20,7 @@ user2 = User.create!(user2)
 
 
 route1 = Routeslog.create!(route_title: 'Ferry Builing run', distance: 2, user_id: demo.id, description: 'asd')
-map1 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
-map2 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
-map3 = Mapping.create!(latitude: 37.795861, longitude: -122.391817, route_id: route1.id)
+
 
 
 route2 = Routeslog.create!(route_title: 'second', distance: 2, user_id: demo.id, description: 'asd')

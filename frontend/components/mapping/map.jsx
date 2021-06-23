@@ -4,10 +4,9 @@ import MarkerManager from '../../utils/marker_manager'
 class TheMap extends React.Component {
   constructor(props){
     super(props);
-
     this.state = {
       waypoints: [],
-      title: "",
+      route_title: "",
       description: "",
       distance: ""
     }
@@ -26,17 +25,18 @@ class TheMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers()
   }
+
   
   handleSubmit(e){
+    debugger
     e.preventDefault();
-
-    this.setState({
-      waypoints: this.MarkerManager.waypts,
+    this.props.createRouteLog({
+      waypoints : JSON.stringify(this.MarkerManager.waypts), route_title: this.state.route_title, description : this.state.description, distance : this.MarkerManager.distance
     })
   }
 
   updateTitle(e){
-    this.setState({title: e.target.value})
+    this.setState({route_title: e.target.value})
 
   }
 
@@ -52,7 +52,7 @@ class TheMap extends React.Component {
           <form onSubmit={this.handleSubmit} className='map-form' >
             <label>Title:
               <br/>
-              <input type="text" value={this.state.title} onChange={this.updateTitle}/>
+              <input type="text" value={this.state.route_title} onChange={this.updateTitle}/>
             </label>
             <label>Description:
               <br/>

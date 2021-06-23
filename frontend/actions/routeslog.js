@@ -11,10 +11,13 @@ const receiveRoutesLogs = routes => ({
   routes
 });
 
-const receiveRoute = route => ({
-  type: RECEIVE_ROUTE,
-  route
-});
+const receiveRoute = route => {
+  debugger
+  return {
+    type: RECEIVE_ROUTE,
+    route
+  }
+};
 
 const removeRoute = route => ({
   type: RECEIVE_ROUTE,

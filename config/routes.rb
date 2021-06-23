@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
     
     resource :session, only: [:create, :destroy]
-    resources :routeslogs, only: [:show, :create, :destroy, :update]
+    resources :routeslog, only: [:show, :create, :destroy, :update]
 
 
   end

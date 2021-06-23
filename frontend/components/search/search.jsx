@@ -7,6 +7,5 @@ const Search = ({mappings}) => (
     <TheMap />
   </div>
 );
-debugger
 
 export default Search

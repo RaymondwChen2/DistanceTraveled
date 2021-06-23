@@ -6,17 +6,14 @@ class MappingRoutes extends React.Component {
   constructor(props){
     super(props)
   }
+  
   componentDidMount(){
-    // debugger
-    // this.props.fetchRoutes()
   }
+  
   render(){
     return (
       <div>
-        {/* <div className='css-map'> */}
-        <TheMap mappings={this.props.mappings}/>
-        {/* <TheMap/> */}
-        
+        <TheMap/>
         {/* </div> */}
       </div>
     )

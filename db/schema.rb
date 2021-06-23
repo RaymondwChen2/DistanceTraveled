@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_194705) do
+ActiveRecord::Schema.define(version: 2021_06_23_003807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "routeslogs", force: :cascade do |t|
     t.string "route_title", null: false
-    t.integer "distance", null: false
+    t.float "distance", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

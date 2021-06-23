@@ -1,18 +1,19 @@
 import {connect} from 'react-redux'
 import TheRoutesLog from './routeslog_index'
 import { fetchRoutesLogs } from "../../actions/routeslog"
+import { updateRouteLog } from '../../utils/routeslog'
 
 const mSTP = state => {
-  debugger
   return {
-    routeslog: state.routeslog
+    routeslogs: Object.values(state.routeslog)
   }
 }
 
 const mDTP = dispatch => {
-  debugger
   return{
-    fetchRoutesLogs: (userId) => dispatch(fetchRoutesLogs(userId))
+    fetchRoutesLogs: (userId) => dispatch(fetchRoutesLogs(userId)),
+    updateRouteLog: (route) => dispatch(updateRouteLog(route)),
+    deleteRouteLog: (routeId) => dispatch(deleteRouteLog(routeId))
   }
 }
 
