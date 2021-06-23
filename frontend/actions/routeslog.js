@@ -12,7 +12,7 @@ const receiveRoutesLogs = routes => ({
 });
 
 const receiveRoute = route => {
-  debugger
+
   return {
     type: RECEIVE_ROUTE,
     route

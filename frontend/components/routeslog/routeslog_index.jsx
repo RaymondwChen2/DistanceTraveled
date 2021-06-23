@@ -1,6 +1,4 @@
 import React from 'react'
-import { fetchRoutesLogs } from '../../actions/routeslog'
-
 
 
 class TheRoutesLog extends React.Component {
@@ -9,18 +7,27 @@ class TheRoutesLog extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchRoutesLogs(this.props.match.params.id)
+    this.props.fetchRoutesLogs(this.props.id)
   }
 
 
 render(){
-  if (Object.values(this.props.routeslog).length == 0){
-    return null
-  }
+  if (this.props.routeslogs.length <= 0) return null
   return(
-    <div>{this.props.routeslog}</div>
-  )
-}
+    <div>
+      <h1>Routes</h1>
+      <ul>
+        {
+          this.props.routeslogs.map(routelog => 
+            <li key={routelog.id}> 
+              {routelog.route_title},{" "}
+              {routelog.description},{" "}
+              {routelog.distance}
+            </li>)
+        }
+      </ul>
+    </div>
+  )}
 }
 
 export default TheRoutesLog

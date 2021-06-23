@@ -13,7 +13,7 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => {
-  debugger
+
   return{
     fetchRoutesLogs: (userId) => dispatch(fetchRoutesLogs(userId)),
     createRouteLog: (route) => dispatch(createRouteLog(route)),

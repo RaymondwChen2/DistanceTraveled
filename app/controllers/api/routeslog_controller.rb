@@ -1,4 +1,4 @@
-require 'byebug'
+
 class Api::RouteslogController < ApplicationController
 
   def index
@@ -8,7 +8,6 @@ class Api::RouteslogController < ApplicationController
   end
 
   def show
-    debugger
     @route = Routeslog.find(params[:id])
     # if @route
     #   render :show

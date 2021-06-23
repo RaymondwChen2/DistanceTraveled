@@ -6,7 +6,6 @@ const routeslogReducer = (state = {}, action) => {
 
   switch (action.type){
     case RECEIVE_ALL_ROUTESLOGS:
-      debugger
       return action.routes
     default: 
       return state;

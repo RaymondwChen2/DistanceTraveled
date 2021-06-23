@@ -16,12 +16,12 @@ const App = () => (
     <nav className='nav-link'>
     <GreetingContainer />
     </nav>
+      <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer}/> 
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <ProtectedRoute exact path="/mapping" component={MappingIndexContainer}/> 
-      <Route exact path="/users/:id/routeslog" component={RoutesLogIndexContainer}/> 
-      <AuthRoute exact path="/" component={SplashContainer}/>
+      <ProtectedRoute exact path="/create_route" component={MappingIndexContainer}/> 
+      <AuthRoute path="/" component={SplashContainer}/>
     </Switch>
 
   </div>

@@ -5,6 +5,7 @@ import { updateRouteLog } from '../../utils/routeslog'
 
 const mSTP = state => {
   return {
+    id: state.session.id,
     routeslogs: Object.values(state.routeslog)
   }
 }
