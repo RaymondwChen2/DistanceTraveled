@@ -2,12 +2,9 @@ import {connect} from 'react-redux'
 import MappingRoutes from './mapping_index'
 import TheMap from './map'
 import { fetchRoutesLogs, createRouteLog, deleteRouteLog } from '../../actions/routeslog'
-// import { deleteRouteLog } from '../../utils/routeslog';
 
 const mSTP = state => {
   return {
-    // mappings: Object.values(state.entities.mappings)
-    
   }
 
 };
@@ -21,4 +18,4 @@ const mDTP = dispatch => {
   }
 }
 
-export default connect(mSTP, mDTP)(TheMap)
+export default connect(null, mDTP)(TheMap)

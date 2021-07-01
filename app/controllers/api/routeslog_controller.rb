@@ -3,17 +3,17 @@ class Api::RouteslogController < ApplicationController
 
   def index
     # api_user_routeslog_index GET    /api/users/:user_id/routeslog(.:format) 
-    @user = User.find(params[:user_id])
+    @user = User.find_by(id: params[:user_id])
     render json: @user.routeslog
   end
 
   def show
     @route = Routeslog.find(params[:id])
-    # if @route
-    #   render :show
-    # else
-    #   render json: ['Route does not exist'], status: 404
-    # end
+    if @route
+      render :show
+    else
+      render json: ['Route does not exist'], status: 404
+    end
     # api_routeslog GET    /api/routeslog/:id(.:format)         
   end
 
@@ -22,7 +22,7 @@ class Api::RouteslogController < ApplicationController
     @route.user_id = current_user.id
 
     if @route.save
-      render :show
+      render :index
     else
       render json: @route.errors.full_messages, status: 422
     end

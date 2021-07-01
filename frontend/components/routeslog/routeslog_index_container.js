@@ -3,9 +3,9 @@ import TheRoutesLog from './routeslog_index'
 import { fetchRoutesLogs } from "../../actions/routeslog"
 import { updateRouteLog } from '../../utils/routeslog'
 
-const mSTP = state => {
+const mSTP = ( state) => {
   return {
-    id: state.session.id,
+    userId: state.session.id,
     routeslogs: Object.values(state.routeslog)
   }
 }

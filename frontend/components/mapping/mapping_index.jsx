@@ -14,7 +14,6 @@ class MappingRoutes extends React.Component {
     return (
       <div>
         <TheMap/>
-        {/* </div> */}
       </div>
     )
   }
