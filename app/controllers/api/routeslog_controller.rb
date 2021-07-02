@@ -9,11 +9,11 @@ class Api::RouteslogController < ApplicationController
 
   def show
     @route = Routeslog.find(params[:id])
-    # if @route
-    #   render :show
-    # else
-    #   render json: ['Route does not exist'], status: 404
-    # end
+    if @route
+      render :show
+    else
+      render json: ['Route does not exist'], status: 404
+    end
     # api_routeslog GET    /api/routeslog/:id(.:format)         
   end
 
