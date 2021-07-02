@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 
 
 class TheRoutesLog extends React.Component {
@@ -8,7 +8,7 @@ class TheRoutesLog extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchRoutesLogs(this.props.userId)
+    this.props.fetchRoutesLogs(this.props.userId).then(<Redirect to='/'/>)
   }
 
 
