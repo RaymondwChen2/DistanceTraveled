@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link, Redirect} from 'react-router-dom'
 
 
 class TheRoutesLog extends React.Component {
@@ -7,7 +8,7 @@ class TheRoutesLog extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchRoutesLogs(this.props.id)
+    this.props.fetchRoutesLogs(this.props.userId).then(<Redirect to='/'/>)
   }
 
 
@@ -20,6 +21,7 @@ render(){
         {
           this.props.routeslogs.map(routelog => 
             <li key={routelog.id}> 
+            <Link to='/routelog/{routelog.id}'></Link>
               {routelog.route_title},{" "}
               {routelog.description},{" "}
               {routelog.distance}
