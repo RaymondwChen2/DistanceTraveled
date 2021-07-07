@@ -1,5 +1,6 @@
 import React from 'react'
 import MarkerManager from '../../utils/marker_manager'
+import {Link, Redirect} from 'react-router-dom'
 
 class TheMap extends React.Component {
   constructor(props){
@@ -32,7 +33,8 @@ class TheMap extends React.Component {
     e.preventDefault();
     this.props.createRouteLog({
       waypoints : JSON.stringify(this.MarkerManager.waypts), route_title: this.state.route_title, description : this.state.description, distance : this.MarkerManager.distance
-    })
+    }).then(this.props.history.push('/'))
+    
   }
 
   updateTitle(e){

@@ -21,7 +21,6 @@ render(){
         {
           this.props.routeslogs.map(routelog => 
             <li key={routelog.id}> 
-            <Link to='/routelog/{routelog.id}'></Link>
               {routelog.route_title},{" "}
               {routelog.description},{" "}
               {routelog.distance}
