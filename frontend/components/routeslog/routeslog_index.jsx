@@ -24,6 +24,8 @@ render(){
               {routelog.route_title},{" "}
               {routelog.description},{" "}
               {routelog.distance}
+              <div onClick={() => this.props.deleteRouteLog(routelog.id)}>Delete</div>
+              <Link to={`/routelog/${routelog.id}/edit`} >Edit</Link>
             </li>)
         }
       </ul>
