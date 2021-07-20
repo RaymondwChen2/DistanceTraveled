@@ -29,7 +29,6 @@ class TheMap extends React.Component {
 
   
   handleSubmit(e){
-    debugger
     e.preventDefault();
     this.props.createRouteLog({
       waypoints : JSON.stringify(this.MarkerManager.waypts), route_title: this.state.route_title, description : this.state.description, distance : this.MarkerManager.distance

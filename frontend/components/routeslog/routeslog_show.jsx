@@ -7,6 +7,7 @@ class RouteslogShow extends React.Component {
   }
 
   render(){
+    console.log('hello')
     return (
       <div>
         route show

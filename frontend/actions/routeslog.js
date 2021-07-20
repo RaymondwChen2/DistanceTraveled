@@ -11,17 +11,14 @@ const receiveRoutesLogs = routes => ({
   routes
 });
 
-const receiveRoute = route => {
-
-  return {
+const receiveRoute = route => ({
     type: RECEIVE_ROUTE,
     route
-  }
-};
+});
 
-const removeRoute = route => ({
-  type: RECEIVE_ROUTE,
-  route
+const removeRoute = routeId => ({
+  type: REMOVE_ROUTE,
+  routeId
 });
 
 const receiveRouteLogsErrors = errors => ({
@@ -47,7 +44,7 @@ export const fetchRoutelog = (routeId) => dispatch => {
 
 export const createRouteLog = route => dispatch => {
   return APIUtil.createRouteLog(route)
-  .then(route => dispatch(receiveRoute(route)))
+  .then(route => dispatch(receiveRoutesLogs(route)))
 };
 
 export const updateRouteLog = route => dispatch => {

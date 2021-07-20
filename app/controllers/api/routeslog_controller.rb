@@ -45,11 +45,12 @@ class Api::RouteslogController < ApplicationController
   def destroy
     route = Routeslog.find_by(id: params[:id])
     @user = current_user
-
+  
     if route 
-      if @user.id == route.creator_id 
+      if @user.id == route.user_id 
         route.destroy 
-        render "/api/users/show"
+        # render "/api/routeslog"
+        render :index
       else
         render json: ['This isn\'t your route!'], status: 422
       end
