@@ -5,11 +5,17 @@ import {Link, Redirect} from 'react-router-dom'
 class TheRoutesLog extends React.Component {
   constructor(props){
     super(props)
+
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchRoutesLogs(this.props.userId).then(<Redirect to='/'/>)
   }
+
+handleDelete(routelog){
+  this.props.deleteRouteLog(routelog).then(<Redirect to='/'/>)
+}
 
 
 render(){

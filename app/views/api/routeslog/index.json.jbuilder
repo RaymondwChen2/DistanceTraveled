@@ -1,6 +1,6 @@
 
-@routeslogs.each do |route|
+@user.routeslog.each do |route|
   json.set! route.id do 
-    json.partial! 'route', route: route
+    json.extract! route, :distance, :user_id, :description, :waypoints, :route_title
   end
 end
