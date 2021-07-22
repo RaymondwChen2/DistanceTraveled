@@ -6,7 +6,7 @@ import routeslog_reducer from './routeslog_reducer'
 const entitiesReducer = combineReducers({
   users: usersReducer,
   mappings: mappingReducer,
-  routeslog: routeslog_reducer
+  // routeslog: routeslog_reducer
 });
 
 export default entitiesReducer;

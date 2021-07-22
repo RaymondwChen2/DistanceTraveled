@@ -14,7 +14,7 @@ class TheRoutesLog extends React.Component {
   }
 
 handleDelete(routelog){
-  this.props.deleteRouteLog(routelog).then(<Redirect to='/'/>)
+  this.props.deleteRouteLog(routelog)
 }
 
 
@@ -30,7 +30,8 @@ render(){
               {routelog.route_title},{" "}
               {routelog.description},{" "}
               {routelog.distance}
-              <button onClick={() => this.props.deleteRouteLog(routelog.id)}>Delete</button>
+              {/* <button onClick={() => this.props.deleteRouteLog(routelog.id)}>Delete</button> */}
+              <button onClick={() => { return this.props.deleteRouteLog(routelog.id).then(()=> this.props.fetchRoutesLogs(this.props.userId))}}>Delete</button>
               {/* <a href={`/routeslog/${routelog.id}/edit`} >Edit</a> */}
               <a href={`/api/routeslog/${routelog.id}`} >Edit</a>
             </li>)

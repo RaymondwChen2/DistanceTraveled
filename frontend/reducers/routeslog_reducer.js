@@ -9,9 +9,9 @@ const routeslogReducer = (state = {}, action) => {
       return action.routes;
     case RECEIVE_ROUTE:
       return action.route;
-      case REMOVE_ROUTE:
-        delete nextState[action.routeId];
-        return nextState;
+    case REMOVE_ROUTE:
+      nextState[action.routeId];
+      return nextState;
     default: 
       return state;
   }
