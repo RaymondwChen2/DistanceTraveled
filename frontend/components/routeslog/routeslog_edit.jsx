@@ -1,18 +1,18 @@
 import React from 'react';
 
 
-class RouteslogShow extends React.Component {
+class RouteslogEdit extends React.Component {
   constructor(props){
     super(props)
   }
   componentDidMount(){
-    debugger
     if (!this.props.route){
       this.props.fetchRoutelog(this.props.match.params.id)
     }
   }
 
   render(){
+    debugger
     if(!this.props.route){
       return null
     }
@@ -26,4 +26,4 @@ class RouteslogShow extends React.Component {
 
 }
 
-export default RouteslogShow
+export default RouteslogEdit

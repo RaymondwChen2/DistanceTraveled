@@ -1,7 +1,7 @@
 import React from 'react';
-import RouteslogShow from './routeslog_show';
+import RouteslogEdit from './routeslog_edit';
 import { connect } from 'react-redux'
-import { fetchRoutelog } from '../../actions/routeslog';
+import { fetchRoutelog, updateRouteLog } from '../../actions/routeslog';
 
 const mSTP = (state, ownProps) => {
   return {
@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
   fetchRoutelog: routeId => dispatch(fetchRoutelog(routeId)),
+  updateRouteLog: route => dispatch(updateRouteLog(route))
 })
 
-export default connect(mSTP, mDTP)(RouteslogShow)
+export default connect(mSTP, mDTP)(RouteslogEdit)

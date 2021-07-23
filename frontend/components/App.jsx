@@ -7,7 +7,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import SplashContainer from './splash/splash_container'
 import MappingIndexContainer from './mapping/mapping_index_container'
 import RoutesLogIndexContainer from "./routeslog/routeslog_index_container"
-import RoutesLogShowContainer from './routeslog/routeslog_show_container'
+import RoutesLogShowContainer from './routeslog/routeslog_edit_container'
 
 
 
