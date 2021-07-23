@@ -1,1 +1,0 @@
-json.extract! routeslog, :distance, :user_id, :description, :waypoints, :route_title

@@ -7,6 +7,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Routeslog
 
+  has_many :friends,
+    class_name: :Friend,
+    foreign_key: :user_id
+
   attr_reader :password
   after_initialize :ensure_session_token
 

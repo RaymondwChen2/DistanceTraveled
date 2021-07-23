@@ -55,9 +55,3 @@ export default class MarkerManager {
     }
   }
   
-  
-  // console.log(route.legs)
-  // summaryPanel.innerHTML +=
-  // (this.totalDistance) + "<br><br>"
-  // summaryPanel.innerHTML += (totalDistance) + "<br><br>"
-  // summaryPanel.innerHTML += this.totalDistance + '<br>'

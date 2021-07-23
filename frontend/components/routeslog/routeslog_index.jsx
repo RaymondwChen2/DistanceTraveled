@@ -5,14 +5,15 @@ import {Link, Redirect} from 'react-router-dom'
 class TheRoutesLog extends React.Component {
   constructor(props){
     super(props)
+
   }
 
   componentDidMount(){
     this.props.fetchRoutesLogs(this.props.userId).then(<Redirect to='/'/>)
   }
-
-
-render(){
+  
+  
+  render(){
   if (this.props.routeslogs.length <= 0) return null
   return(
     <div>
@@ -24,8 +25,8 @@ render(){
               {routelog.route_title},{" "}
               {routelog.description},{" "}
               {routelog.distance}
-              <div onClick={() => this.props.deleteRouteLog(routelog.id)}>Delete</div>
-              <Link to={`/routelog/${routelog.id}/edit`} >Edit</Link>
+              <button onClick={() => {this.props.deleteRouteLog(routelog.id)}}>Delete</button>
+              <Link to={`/routeslog/${routelog.id}/edit`}>Edit1</Link> 
             </li>)
         }
       </ul>
