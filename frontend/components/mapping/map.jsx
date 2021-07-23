@@ -20,7 +20,8 @@ class TheMap extends React.Component {
     const mapOptions = {
       center: { lat: 37.79916, lng: -122.40132 }, 
       zoom: 17,
-      title: 'Hello World'
+      title: 'Hello World',
+      clickableIcons: false
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);

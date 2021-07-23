@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import MappingRoutes from './mapping_index'
+// import MappingRoutes from './mapping_index'
 import TheMap from './map'
 import { fetchRoutesLogs, createRouteLog, deleteRouteLog } from '../../actions/routeslog'
 

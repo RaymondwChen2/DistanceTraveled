@@ -1,22 +1,22 @@
-import React from 'react';
-import TheMap from './map'
+// import React from 'react';
+// import TheMap from './map'
 
 
-class MappingRoutes extends React.Component {
-  constructor(props){
-    super(props)
-  }
+// class MappingRoutes extends React.Component {
+//   constructor(props){
+//     super(props)
+//   }
   
-  componentDidMount(){
-  }
+//   componentDidMount(){
+//   }
   
-  render(){
-    return (
-      <div>
-        <TheMap/>
-      </div>
-    )
-  }
-}
+//   render(){
+//     return (
+//       <div>
+//         <TheMap/>
+//       </div>
+//     )
+//   }
+// }
 
-export default MappingRoutes
+// export default MappingRoutes
