@@ -6,11 +6,16 @@ const routeslogReducer = (state = {}, action) => {
 
   switch (action.type){
     case RECEIVE_ALL_ROUTESLOGS:
-      return action.routes;
+      action.routes.forEach(route => {
+        nextState[route.id] = route
+      });
+      return nextState;
     case RECEIVE_ROUTE:
-      return action.route;
+      let routeKey = Object.keys(action.route)[0];
+      nextState[routeKey] = Object.values(action.route)[0];
+      return nextState;
     case REMOVE_ROUTE:
-      nextState[action.routeId];
+      delete nextState[action.routeId];
       return nextState;
     default: 
       return state;

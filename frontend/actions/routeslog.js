@@ -44,7 +44,7 @@ export const fetchRoutelog = (routeId) => dispatch => {
 
 export const createRouteLog = route => dispatch => {
   return APIUtil.createRouteLog(route)
-  .then(route => dispatch(receiveRoutesLogs(route)))
+  .then(route => dispatch(receiveRoute(route)))
 };
 
 export const updateRouteLog = route => dispatch => {

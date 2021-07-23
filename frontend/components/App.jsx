@@ -17,13 +17,13 @@ const App = () => (
     <GreetingContainer/>
     </nav>
     <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <ProtectedRoute exact path="/create_route" component={MappingIndexContainer}/> 
-      <AuthRoute path="/" component={SplashContainer}/>
-    </Switch>
       <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer}/> 
       <ProtectedRoute exact path="/routeslog/:id/edit" component={RoutesLogShowContainer}/> 
+      <ProtectedRoute exact path="/create_route" component={MappingIndexContainer}/> 
+      <AuthRoute exact path="/login" component={LogInFormContainer} />
+      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <AuthRoute path="/" component={SplashContainer}/>
+    </Switch>
 
   </div>
 );

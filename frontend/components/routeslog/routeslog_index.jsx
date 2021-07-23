@@ -6,19 +6,14 @@ class TheRoutesLog extends React.Component {
   constructor(props){
     super(props)
 
-    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchRoutesLogs(this.props.userId).then(<Redirect to='/'/>)
   }
-
-handleDelete(routelog){
-  this.props.deleteRouteLog(routelog)
-}
-
-
-render(){
+  
+  
+  render(){
   if (this.props.routeslogs.length <= 0) return null
   return(
     <div>
@@ -30,10 +25,8 @@ render(){
               {routelog.route_title},{" "}
               {routelog.description},{" "}
               {routelog.distance}
-              {/* <button onClick={() => this.props.deleteRouteLog(routelog.id)}>Delete</button> */}
-              <button onClick={() => { return this.props.deleteRouteLog(routelog.id).then(()=> this.props.fetchRoutesLogs(this.props.userId))}}>Delete</button>
-              {/* <a href={`/routeslog/${routelog.id}/edit`} >Edit</a> */}
-              <a href={`/api/routeslog/${routelog.id}`} >Edit</a>
+              <button onClick={() => {this.props.deleteRouteLog(routelog.id)}}>Delete</button>
+              <Link to={`/routeslog/${routelog.id}/edit`}>Edit1</Link> 
             </li>)
         }
       </ul>
