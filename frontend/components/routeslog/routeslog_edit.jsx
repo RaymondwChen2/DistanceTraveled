@@ -10,11 +10,6 @@ class RouteslogEdit extends React.Component {
     this.state = this.props.route
   }
   componentDidMount(){
-    this.initMap()
-    
-    if (!this.props.route){
-      this.props.fetchRoutelog(this.props.match.params.id)
-    }
     const mapOptions = {
       center: { lat: 37.79916, lng: -122.40132 }, 
       zoom: 17,
@@ -25,6 +20,11 @@ class RouteslogEdit extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers()
+
+    
+    if (!this.props.route){
+      this.props.fetchRoutelog(this.props.match.params.id)
+    }
   }
   
 
