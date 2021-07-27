@@ -9,7 +9,9 @@ export default class MarkerManager {
     this.directionsRenderer = new google.maps.DirectionsRenderer();
     if(this.waypts.length > 0){
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
+      this.directionsRenderer.setMap(this.map)
     }
+    this.updateMarkers()
   }
   
   undoMarker(){
