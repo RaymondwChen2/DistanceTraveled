@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { fetchRoutelog, updateRouteLog } from '../../actions/routeslog';
 
 const mSTP = (state, ownProps) => {
+  // console.log(state.routeslog[ownProps.match.params.id])
   return {
     route: state.routeslog[ownProps.match.params.id]
   }

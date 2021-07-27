@@ -1,12 +1,15 @@
 
 export default class MarkerManager {
-  constructor(map){
+  constructor(map, waypoints=[]){
     this.map = map;
-    this.waypts = [];
+    this.waypts = waypoints;
     this.distance = ''
     this.summaryPanel = document.getElementById("directions-panel")
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer = new google.maps.DirectionsRenderer();
+    if(this.waypts.length > 0){
+      this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
+    }
   }
   
   undoMarker(){
@@ -19,12 +22,16 @@ export default class MarkerManager {
       this.waypts.push({location:{lat: e.latLng.lat(), lng: e.latLng.lng()}, stopover: false})
       this.directionsRenderer.setMap(this.map)
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
+      console.log(this.waypts)
     })
   };
+
+
   
   calculateAndDisplayRoute(directionsService, directionsRenderer) {
     const origin = `${this.waypts[0].location.lat}, ${this.waypts[0].location.lng}`
     const destination = `${this.waypts[this.waypts.length - 1].location.lat}, ${this.waypts[this.waypts.length - 1].location.lng}`
+    // debugger
     directionsService.route(
       {
         origin: origin,
@@ -42,9 +49,7 @@ export default class MarkerManager {
           // For each route, display summary information.
           for (let i = 0; i < route.legs.length; i++) {
             const routeSegment = i + 1;
-            console.log(this.waypts)
             this.distance = route.legs[i].distance.text
-            console.log(this.distance)
             this.summaryPanel.innerHTML += 'Distance: ' + route.legs[i].distance.text + '<br>'
           }
         } else {
