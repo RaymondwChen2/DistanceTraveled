@@ -42,8 +42,12 @@ class RouteslogEdit extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateRouteLog(this.props.route,{
-      waypoints: JSON.stringify(this.MarkerManager.waypts), route_title: this.state.route_title, description: this.state.description, distance: this.MarkerManager.distance
+    this.props.updateRouteLog({
+                              waypoints: JSON.stringify(this.MarkerManager.waypts),
+                              route_title: this.state.route_title, 
+                              description: this.state.description, 
+                              distance: this.MarkerManager.distance,
+                              id: this.props.route.id
     }).then(this.props.history.push('/'))
   }
 

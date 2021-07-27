@@ -20,11 +20,12 @@ export const createRouteLog = routeslog => {
   })
 }
 
-export const updateRouteLog = route => {
+export const updateRouteLog = routeslog => {
+  debugger
   return $.ajax({
-    url: `api/routeslog/${route.id}`,
+    url: `api/routeslog/${routeslog.id}`,
     method: 'PATCH',
-    data: { route }
+    data: { routeslog }
   })
 }
 

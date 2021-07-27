@@ -29,7 +29,7 @@ class Api::RouteslogController < ApplicationController
   end
 
   def update
-    @route = Routeslog.find_by(id: params[:id])
+    @route = Routeslog.find(params[:id])
     
     if @route
       if @route.update(route_params)
@@ -61,6 +61,6 @@ class Api::RouteslogController < ApplicationController
 
   private
   def route_params
-    params.require(:routeslog).permit(:route_title, :description, :distance, :waypoints, :user_id)
+    params.require(:routeslog).permit(:route_title, :description, :distance, :waypoints, :user_id, :id)
   end
 end
