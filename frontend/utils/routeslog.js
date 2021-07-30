@@ -21,7 +21,6 @@ export const createRouteLog = routeslog => {
 }
 
 export const updateRouteLog = routeslog => {
-  debugger
   return $.ajax({
     url: `api/routeslog/${routeslog.id}`,
     method: 'PATCH',
