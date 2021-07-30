@@ -8,7 +8,7 @@ import TheMap from '../mapping/map';
 class RouteslogEdit extends React.Component {
   constructor(props){
     super(props)
-    
+    debugger
     this.state = {
       waypoints: this.props.route && this.props.route.waypoints.length ?  JSON.parse(this.props.route.waypoints) : [],
       route_title: this.props.route ? this.props.route.route_title : '',
