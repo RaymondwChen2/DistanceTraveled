@@ -18,6 +18,7 @@ class TheRoutesLog extends React.Component {
   return(
     <div>
       <h1>Routes</h1>
+      <Link to={"/dashbaord/friends"}>friend list</Link>
       <ul>
         {
           this.props.routeslogs.map(routelog => 
