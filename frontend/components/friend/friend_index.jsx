@@ -1,0 +1,17 @@
+import React from 'react';
+
+class FriendIndex extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
+    render(){
+        return(
+            <div>
+                friends
+            </div>
+    
+        )
+        
+    }
+}
