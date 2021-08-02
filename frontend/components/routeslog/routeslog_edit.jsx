@@ -83,6 +83,8 @@ class RouteslogEdit extends React.Component {
       </div>
       <div className='the-map-div'>
         <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
+        <button onClick={() => this.MarkerManager.clearAll()}>Clear all</button>
+
           <div id='map' ref={ map => this.mapNode = map}></div>
       </div>
     </div>

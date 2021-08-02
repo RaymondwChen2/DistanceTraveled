@@ -21,9 +21,13 @@ export default class MarkerManager {
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
     console.log(this.waypts,'after')
     } else {
-      this.waypts = []
-      this.directionsRenderer.setMap(null);
+      this.clearAll();
     }
+  }
+
+  clearAll(){
+    this.waypts = [];
+    this.directionsRenderer.setMap(null);
   }
   
   updateMarkers(){
