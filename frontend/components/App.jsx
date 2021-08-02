@@ -8,7 +8,7 @@ import SplashContainer from './splash/splash_container'
 import MappingIndexContainer from './mapping/mapping_index_container'
 import RoutesLogIndexContainer from "./routeslog/routeslog_index_container"
 import RoutesLogEditContainer from './routeslog/routeslog_edit_container'
-
+import FriendsIndexContainer from './friend/friend_index_container'
 
 
 const App = () => (
@@ -19,6 +19,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer}/> 
       <ProtectedRoute exact path="/routeslog/:id/edit" component={RoutesLogEditContainer}/> 
+      <ProtectedRoute exact path='/dashboard/friends' component={FriendsIndexContainer} />
       <ProtectedRoute exact path="/create_route" component={MappingIndexContainer}/> 
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

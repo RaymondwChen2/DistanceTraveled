@@ -8,10 +8,12 @@ class FriendIndex extends React.Component {
     render(){
         return(
             <div>
-                friends
+                friends index page
             </div>
     
         )
         
     }
 }
+
+export default FriendIndex
