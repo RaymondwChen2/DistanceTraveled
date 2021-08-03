@@ -1,6 +1,10 @@
 import React from 'react'
 import MarkerManager from '../../utils/marker_manager'
 import {Link, Redirect} from 'react-router-dom'
+import { AiOutlineUndo } from 'react-icons/ai'
+import { MdClear } from 'react-icons/md'
+
+
 
 class TheMap extends React.Component {
   constructor(props){
@@ -64,8 +68,9 @@ class TheMap extends React.Component {
         </div>
         <div className='the-map-div'>
           <div className='route-tools'>
-            <input type="button" onClick={()=> this.MarkerManager.undoMarker()} value='Undo'/>
-            <button onClick={()=> this.MarkerManager.clearAll()}>Clear all</button>
+            <button onClick={() => this.MarkerManager.undoMarker()}> <AiOutlineUndo /> </button>
+            {/* // <input type="button" onClick={() => this.MarkerManager.undoMarker()} value={<AiOutlineUndo/>/> */}
+            <button onClick={() => this.MarkerManager.clearAll()}><MdClear/></button>
           </div>
             <div id='map' ref={ map => this.mapNode = map}></div>
         </div>
