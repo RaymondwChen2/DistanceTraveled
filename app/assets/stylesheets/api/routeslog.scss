@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.routes-form{
+    display: block;
+}
+
+
 .thead{
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
@@ -39,10 +44,33 @@
 
 .route-tools{
     position: absolute;
-    width: 250px;
-    height: 100px;
+    width: 150px;
+    height: 103px;
     z-index: 9000;
     top: 200px;
     right: 20px;
     border: solid 5px black;
+
+    .tools-head{
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: rgba(black, .5);
+
+    }
+
+    .undo-button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 15px;
+    }
+
+    .delete-button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 15px
+    }
 }

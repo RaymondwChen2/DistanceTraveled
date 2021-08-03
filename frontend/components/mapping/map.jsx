@@ -18,6 +18,7 @@ class TheMap extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTitle = this.updateTitle.bind(this)
     this.updateDescription = this.updateDescription.bind(this)
+    this.closeForm = this.closeForm.bind(this)
   }
   
   componentDidMount() {
@@ -48,12 +49,21 @@ class TheMap extends React.Component {
     this.setState({description: e.target.value})
   }
 
+  closeForm(e){
+    if(display=== none){
+      display = flex;
+    }else {
+      display = none
+    }
+  }
+
 
   render(){
     return (
       <div className='map-container'>
         <div>
           <form onSubmit={this.handleSubmit} className='map-form' >
+            <span onClick={this.closeForm()}>open</span>
             <label>Title:
               <br/>
               <input type="text" value={this.state.route_title} onChange={this.updateTitle}/>
@@ -68,10 +78,10 @@ class TheMap extends React.Component {
         </div>
         <div className='the-map-div'>
           <div className='route-tools'>
-            <button onClick={() => this.MarkerManager.undoMarker()}> <AiOutlineUndo /> </button>
-            {/* // <input type="button" onClick={() => this.MarkerManager.undoMarker()} value={<AiOutlineUndo/>/> */}
-            <button onClick={() => this.MarkerManager.clearAll()}><MdClear/></button>
-          </div>
+            <div className='tools-head'>Tools</div>
+              <button className='undo-button' onClick={() => this.MarkerManager.undoMarker()}> <AiOutlineUndo /> Undo</button>
+              <button className='delete-button' onClick={() => this.MarkerManager.clearAll()}><MdClear/> Clear</button>
+            </div>
             <div id='map' ref={ map => this.mapNode = map}></div>
         </div>
       </div>
