@@ -14,20 +14,30 @@ class TheRoutesLog extends React.Component {
   
   
   render(){
-  if (this.props.routeslogs.length <= 0) return null
+  // if (this.props.routeslogs.length <= 0) return null
   return(
-    <div>
-      <h1>Routes</h1>
-      <Link to={"/dashbaord/friends"}>friend list</Link>
+    <div className='route-container'>
+      <div className="route-head">
+        <h1>Routes</h1>
+        <Link to={"/dashboard/friends"}>friend list</Link>
+      </div>
+        <div className='thead'>
+          <h2>Title</h2>
+          <h2>Description</h2>
+          <h2>Distance</h2>
+          <h2>Options</h2>
+        </div>
       <ul>
         {
           this.props.routeslogs.map(routelog => 
-            <li key={routelog.id}> 
-              {routelog.route_title},{" "}
-              {routelog.description},{" "}
-              {routelog.distance}
-              <button onClick={() => {this.props.deleteRouteLog(routelog.id)}}>Delete</button>
-              <Link to={`/routeslog/${routelog.id}/edit`}>Edit1</Link> 
+            <li className='thead' key={routelog.id}> 
+              <div>{routelog.route_title}</div>
+              <div>{routelog.description}</div>
+              <div>{routelog.distance}</div>
+              <div>
+                <button className='route-delete' onClick={() => {this.props.deleteRouteLog(routelog.id)}}>Delete</button>
+                <Link to={`/routeslog/${routelog.id}/edit`}>View/Edit</Link> 
+              </div>
             </li>)
         }
       </ul>

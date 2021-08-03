@@ -1,3 +1,27 @@
 // Place all the styles related to the api/routeslog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thead{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 20px;
+    word-wrap: break-word;
+    border: solid 1px black;
+}
+
+.route-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.route-delete{
+    margin-right: 10px;
+}
+
+.route-container{
+    width: 80%;
+    height: 100%;
+    text-align:  center;
+    margin: auto
+}
