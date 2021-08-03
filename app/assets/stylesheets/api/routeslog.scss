@@ -8,11 +8,22 @@
     grid-gap: 20px;
     word-wrap: break-word;
     border: solid 1px black;
+    padding: 10px;
+
+    h2{
+        font-size: 20px;
+        font-weight: 600;
+    }
 }
 
 .route-head{
     display: flex;
     justify-content: space-between;
+
+    h1{
+        font-size: 25px;
+        font-weight: 800;
+    }
 }
 
 .route-delete{
@@ -24,4 +35,14 @@
     height: 100%;
     text-align:  center;
     margin: auto
+}
+
+.route-tools{
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    z-index: 9000;
+    top: 200px;
+    right: 20px;
+    border: solid 5px black;
 }
