@@ -35,8 +35,8 @@ class TheRoutesLog extends React.Component {
               <div>{routelog.description}</div>
               <div>{routelog.distance}</div>
               <div>
-                <button className='route-delete' onClick={() => {this.props.deleteRouteLog(routelog.id)}}>Delete</button>
                 <Link to={`/routeslog/${routelog.id}/edit`}>View/Edit</Link> 
+                <button className='route-delete' onClick={() => {this.props.deleteRouteLog(routelog.id)}}>Delete</button>
               </div>
             </li>)
         }
