@@ -1,8 +1,9 @@
 import React from 'react'
 import MarkerManager from '../../utils/marker_manager'
-import {Link, Redirect} from 'react-router-dom'
+// import {Link, Redirect} from 'react-router-dom'
 import { AiOutlineUndo } from 'react-icons/ai'
 import { MdClear } from 'react-icons/md'
+import { FaExchangeAlt } from 'react-icons/fa'
 
 
 
@@ -18,7 +19,7 @@ class TheMap extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTitle = this.updateTitle.bind(this)
     this.updateDescription = this.updateDescription.bind(this)
-    this.closeForm = this.closeForm.bind(this)
+    // this.closeForm = this.closeForm.bind(this)
   }
   
   componentDidMount() {
@@ -49,13 +50,15 @@ class TheMap extends React.Component {
     this.setState({description: e.target.value})
   }
 
-  closeForm(e){
-    if(display=== none){
-      display = flex;
-    }else {
-      display = none
-    }
-  }
+  // closeForm(e){
+  //   let formSidebar = document.getElementsByClassName("map-form")
+  //   debugger
+  //   if(formSidebar.style.display === none){
+  //     formSidebar.style.display = flex;
+  //   }else {
+  //     formSidebar.style.display = none
+  //   }
+  // }
 
 
   render(){
@@ -63,7 +66,7 @@ class TheMap extends React.Component {
       <div className='map-container'>
         <div>
           <form onSubmit={this.handleSubmit} className='map-form' >
-            <span onClick={this.closeForm()}>open</span>
+            {/* <span onClick={this.closeForm()}>open</span> */}
             <label>Title:
               <br/>
               <input type="text" value={this.state.route_title} onChange={this.updateTitle}/>
@@ -78,9 +81,12 @@ class TheMap extends React.Component {
         </div>
         <div className='the-map-div'>
           <div className='route-tools'>
-            <div className='tools-head'>Tools</div>
-              <button className='undo-button' onClick={() => this.MarkerManager.undoMarker()}> <AiOutlineUndo /> Undo</button>
-              <button className='delete-button' onClick={() => this.MarkerManager.clearAll()}><MdClear/> Clear</button>
+            <div className='tool-container'>
+              <div className='tools-head'>Tools</div>
+                <button className='undo-button' onClick={() => this.MarkerManager.undoMarker()}> <AiOutlineUndo /> Undo</button>
+                <button className='delete-button' onClick={() => this.MarkerManager.clearAll()}><MdClear/> Clear</button>
+                <button className='reverse-button' onClick={() => this.MarkerManager.reverseRoute()}><FaExchangeAlt /> Reverse</button>
+              </div>
             </div>
             <div id='map' ref={ map => this.mapNode = map}></div>
         </div>

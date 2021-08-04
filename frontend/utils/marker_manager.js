@@ -15,11 +15,9 @@ export default class MarkerManager {
   }
   
   undoMarker(){
-    console.log(this.waypts, 'before')
     if (this.waypts.length > 1){
       this.waypts.pop()
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
-    console.log(this.waypts,'after')
     } else {
       this.clearAll();
     }
@@ -28,6 +26,14 @@ export default class MarkerManager {
   clearAll(){
     this.waypts = [];
     this.directionsRenderer.setMap(null);
+  }
+
+  reverseRoute(){
+    if (this.waypts.length > 1){
+      this.waypts.reverse();
+      this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer);
+    }
+
   }
   
   updateMarkers(){
