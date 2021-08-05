@@ -4,6 +4,8 @@ import MarkerManager from '../../utils/marker_manager'
 import { AiOutlineUndo } from 'react-icons/ai'
 import { MdClear } from 'react-icons/md'
 import { FaExchangeAlt } from 'react-icons/fa'
+import { AiFillCaretLeft } from 'react-icons/ai'
+import { AiFillCaretRight} from 'react-icons/ai'
 
 
 
@@ -14,12 +16,13 @@ class TheMap extends React.Component {
       waypoints: [],
       route_title: "",
       description: "",
-      distance: ""
+      distance: "",
+      sidebarDisplay: true
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTitle = this.updateTitle.bind(this)
     this.updateDescription = this.updateDescription.bind(this)
-    // this.closeForm = this.closeForm.bind(this)
+    this.closeForm = this.closeForm.bind(this)
   }
   
   componentDidMount() {
@@ -50,23 +53,26 @@ class TheMap extends React.Component {
     this.setState({description: e.target.value})
   }
 
-  // closeForm(e){
-  //   let formSidebar = document.getElementsByClassName("map-form")
-  //   debugger
-  //   if(formSidebar.style.display === none){
-  //     formSidebar.style.display = flex;
-  //   }else {
-  //     formSidebar.style.display = none
-  //   }
-  // }
+  closeForm(e){
+    let formSidebar = document.getElementById("map-form");
+    let sideBar = document.getElementsByClassName('side-bar-button');
+    // debugger
+    if(formSidebar.style.display === 'none'){
+      this.setState({sidebarDisplay: true});
+      formSidebar.style.display = 'flex';
+    } else {
+      this.setState({ sidebarDisplay: false });
+      formSidebar.style.display = 'none';
+
+    }
+  }
 
 
   render(){
     return (
       <div className='map-container'>
         <div>
-          <form onSubmit={this.handleSubmit} className='map-form' >
-            {/* <span onClick={this.closeForm()}>open</span> */}
+          <form onSubmit={this.handleSubmit} id='map-form' >
             <label>Title:
               <br/>
               <input type="text" value={this.state.route_title} onChange={this.updateTitle}/>
@@ -88,6 +94,7 @@ class TheMap extends React.Component {
                 <button className='reverse-button' onClick={() => this.MarkerManager.reverseRoute()}><FaExchangeAlt /> Reverse</button>
               </div>
             </div>
+          <div className='side-bar-button' onClick={() => this.closeForm()}>{this.state.sidebarDisplay === true ? <AiFillCaretLeft /> : <AiFillCaretRight />}</div>
             <div id='map' ref={ map => this.mapNode = map}></div>
         </div>
       </div>
