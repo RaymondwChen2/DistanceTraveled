@@ -27,6 +27,16 @@
   padding: 10px;
   border-radius: 5px;
   height: 100%;
+
+  textarea{
+    width: 156px;
+    height: 100px;
+  }
+
+  label{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .side-bar-button{
@@ -35,6 +45,8 @@
   z-index: 1;
   background-color: rgb(209, 204, 204);
   padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .side-bar-button:hover{

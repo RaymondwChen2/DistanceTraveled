@@ -41,7 +41,6 @@ export default class MarkerManager {
       this.waypts.push({location:{lat: e.latLng.lat(), lng: e.latLng.lng()}, stopover: false})
       this.directionsRenderer.setMap(this.map)
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
-      console.log(this.waypts)
     })
   };
 

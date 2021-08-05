@@ -56,7 +56,7 @@ class TheMap extends React.Component {
   closeForm(e){
     let formSidebar = document.getElementById("map-form");
     let sideBar = document.getElementsByClassName('side-bar-button');
-    // debugger
+
     if(formSidebar.style.display === 'none'){
       this.setState({sidebarDisplay: true});
       formSidebar.style.display = 'flex';
