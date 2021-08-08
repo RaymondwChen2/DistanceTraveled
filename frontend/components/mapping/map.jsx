@@ -1,11 +1,11 @@
-import React from 'react'
-import MarkerManager from '../../utils/marker_manager'
+import React from 'react';
+import MarkerManager from '../../utils/marker_manager';
 // import {Link, Redirect} from 'react-router-dom'
-import { AiOutlineUndo } from 'react-icons/ai'
-import { MdClear } from 'react-icons/md'
-import { FaExchangeAlt } from 'react-icons/fa'
-import { AiFillCaretLeft } from 'react-icons/ai'
-import { AiFillCaretRight} from 'react-icons/ai'
+import { AiOutlineUndo } from 'react-icons/ai';
+import { MdClear } from 'react-icons/md';
+import { FaExchangeAlt } from 'react-icons/fa';
+import { AiFillCaretLeft } from 'react-icons/ai';
+import { AiFillCaretRight} from 'react-icons/ai';
 
 
 
@@ -18,11 +18,11 @@ class TheMap extends React.Component {
       description: "",
       distance: "",
       sidebarDisplay: true
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateTitle = this.updateTitle.bind(this)
-    this.updateDescription = this.updateDescription.bind(this)
-    this.closeForm = this.closeForm.bind(this)
+    this.updateTitle = this.updateTitle.bind(this);
+    this.updateDescription = this.updateDescription.bind(this);
+    this.closeForm = this.closeForm.bind(this);
   }
   
   componentDidMount() {
@@ -41,16 +41,16 @@ class TheMap extends React.Component {
     e.preventDefault();
     this.props.createRouteLog({
       waypoints : JSON.stringify(this.MarkerManager.waypts), route_title: this.state.route_title, description : this.state.description, distance : this.MarkerManager.distance
-    }).then(this.props.history.push('/'))
+    }).then(this.props.history.push('/'));
     
   }
 
   updateTitle(e){
-    this.setState({route_title: e.target.value})
+    this.setState({route_title: e.target.value});
   }
 
   updateDescription(e){
-    this.setState({description: e.target.value})
+    this.setState({description: e.target.value});
   }
 
   closeForm(e){
@@ -75,7 +75,7 @@ class TheMap extends React.Component {
           <form onSubmit={this.handleSubmit} id='map-form' >
             <label>Title:
               <br/>
-              <input type="text" value={this.state.route_title} onChange={this.updateTitle}/>
+              <input type="text" className='route-title' value={this.state.route_title} onChange={this.updateTitle}/>
             </label>
             <label>Description:
               <br/>

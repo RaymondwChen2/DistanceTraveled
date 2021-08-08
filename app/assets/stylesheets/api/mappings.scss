@@ -26,10 +26,15 @@
   background-color: rgb(209, 204, 204);
   padding: 10px;
   border-radius: 5px;
+  width: 250px;
   height: 100%;
 
+  .route-title{
+    width: 200px;
+  }
+
   textarea{
-    width: 156px;
+    width: 200px;
     height: 100px;
   }
 

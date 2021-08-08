@@ -80,7 +80,6 @@ class RouteslogEdit extends React.Component {
 
   
   render(){
-    // debugger
     if(!this.props.route){
       return null
     }
@@ -90,7 +89,7 @@ class RouteslogEdit extends React.Component {
           <form onSubmit={this.handleSubmit} id='map-form' >
             <label>Title:
               <br />
-              <input type="text" value={this.state.route_title} onChange={this.updateTitle} />
+              <input type="text" className='route-title' value={this.state.route_title} onChange={this.updateTitle} />
             </label>
             <label>Description:
               <br />
