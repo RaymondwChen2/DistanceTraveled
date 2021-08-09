@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FriendIndex extends React.Component {
+class FriendFinder extends React.Component {
     constructor(props){
         super(props);
     }
@@ -8,12 +8,10 @@ class FriendIndex extends React.Component {
     render(){
         return(
             <div>
-                friends index page
+                <input type="text" value='Search for Friends'  />
             </div>
-    
         )
-        
     }
 }
 
-export default FriendIndex
+export default FriendFinder
