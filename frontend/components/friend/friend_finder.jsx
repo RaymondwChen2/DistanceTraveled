@@ -8,7 +8,10 @@ class FriendFinder extends React.Component {
     render(){
         return(
             <div>
-                <input type="text" value='Search for Friends'  />
+                <form>
+                    <input type="text" value='Search for Friends'  />
+                    <button>Search</button>
+                </form>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React from 'react';
+import FriendFinder from './friend_finder';
 
 class FriendIndex extends React.Component {
     constructor(props){
@@ -8,6 +9,7 @@ class FriendIndex extends React.Component {
     render(){
         return(
             <div>
+                <FriendFinder/>
                 friends index page
             </div>
     
