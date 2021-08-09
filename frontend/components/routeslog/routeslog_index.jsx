@@ -21,7 +21,7 @@ class TheRoutesLog extends React.Component {
         <h1>Routes</h1>
         <Link to={"/dashboard/friends"}>Friend list</Link>
       </div>
-        <div className='thead'>
+        <div className='route-placement'>
           <h2>Title</h2>
           <h2>Description</h2>
           <h2>Distance</h2>
@@ -30,7 +30,7 @@ class TheRoutesLog extends React.Component {
       <ul>
         {
           this.props.routeslogs.map(routelog => 
-            <li className='thead' key={routelog.id}> 
+            <li className='route-placement' key={routelog.id}> 
               <div>{routelog.route_title}</div>
               <div>{routelog.description}</div>
               <div>{routelog.distance}</div>
