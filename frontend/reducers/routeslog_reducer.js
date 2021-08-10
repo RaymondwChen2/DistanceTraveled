@@ -7,7 +7,7 @@ const routeslogReducer = (state = {}, action) => {
   switch (action.type){
     case RECEIVE_ALL_ROUTESLOGS:
       action.routes.forEach(route => {
-        nextState[route.id] = route
+        nextState[route.id] = route;
       });
       return nextState;
     case RECEIVE_ROUTE:

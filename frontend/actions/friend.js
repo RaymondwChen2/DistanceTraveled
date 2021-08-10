@@ -21,15 +21,15 @@ const receiveUserFriends = friendships => ({
 
 export const deleteFriendship = friendshipId => dispatch => {
     return FriendsAPIUtil.deleteFriend(friendshipId)
-        .then(() => dispatch(removeFriend(friendshipId)))
+        .then(() => dispatch(removeFriend(friendshipId)));
 };
 
 export const createFriendship = friendship => dispatch => {
     return FriendsAPIUtil.createFriend(friendship)
-        .then(friendship => dispatch(receiveFriendship(friendship)))
+        .then(friendship => dispatch(receiveFriendship(friendship)));
 };
 
 export const requestFriends = userId => dispatch => {
     return FriendsAPIUtil.fetchUserFriends(userId)
-        .then(friendships => dispatch(receiveUserFriends(friendships)))
+        .then(friendships => dispatch(receiveUserFriends(friendships)));
 };
