@@ -9,12 +9,10 @@ class FriendIndex extends React.Component {
     render(){
         return(
             <div>
-                <FriendFinder/>
+                <FriendFinder props={this.props}/>
                 friends index page
             </div>
-    
         )
-        
     }
 }
 

@@ -5,11 +5,15 @@ class FriendFinder extends React.Component {
         super(props);
     }
 
+    onSearch(){
+        
+    }
+
     render(){
         return(
             <div>
                 <form>
-                    <input type="text" value='Search for Friends'  />
+                    <input type="text" placeholder='Search for Friends'  />
                     <button>Search</button>
                 </form>
             </div>
