@@ -5,3 +5,10 @@ export const fetchUser = userId => {
     });
 };
 
+export const fetchUserSearch = search => {
+    return $.ajax({
+        url: `api/users/search`,
+        method: 'POST',
+        data: search
+    });
+};
