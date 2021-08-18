@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session';
 
-const usersReducer = (state = {}, action) => {
+const usersReducer = (action, state = {}) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   let userId;
