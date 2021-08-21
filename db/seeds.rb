@@ -9,9 +9,9 @@ User.delete_all
 Routeslog.delete_all
 
 # ########### USERS #############
-demo = {username: 'Guest', password: '123456', email: 'guest@guest.com'}
-user1 = {username: 'raymond', password: '123456', email: 'raymond@raymond.com'}
-user2 = {username: 'elsa', password: '123456', email: 'elsa@elsa.com'}
+demo = {username: 'Guest', password: '123456', email: 'guest@guest.com', first_name: 'Guess', last_name: 'Guess'}
+user1 = {username: 'raymond', password: '123456', email: 'raymond@raymond.com', first_name: 'Raymond', last_name: 'Chen'}
+user2 = {username: 'elsa', password: '123456', email: 'elsa@elsa.com',  first_name: 'Elsa', last_name: 'Wong'}
 
 demo = User.create!(demo)
 user1 = User.create!(user1)
