@@ -1,6 +1,6 @@
 class Api::FriendsController < ApplicationController
   def index
-    @friends = Friend.find(params[:user_id])
+    @friends = Friend.where(user_id: params[:user_id])
     render :index
   end
 
@@ -15,13 +15,14 @@ class Api::FriendsController < ApplicationController
   end
 
   def destroy
-    friend = Friend.find(params[:id])
+    friend = Friend.find_by(id: params[:id])
     @user = current_user
     if @user.id === friend.user.id
       friend.destroy
       render "api/users/show"
     else
       render json: ['This isn\'t your friend!'], status: 422
+    end
   end
 
   def friend_params

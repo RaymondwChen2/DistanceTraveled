@@ -7,6 +7,7 @@
 # #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 Routeslog.delete_all
+Friend.delete_all
 
 # ########### USERS #############
 demo = {username: 'Guest', password: '123456', email: 'guest@guest.com', first_name: 'Guess', last_name: 'Guess'}
@@ -17,30 +18,18 @@ demo = User.create!(demo)
 user1 = User.create!(user1)
 user2 = User.create!(user2)
 
+######## Friends ##############
+
+friend1 = { user_id: user1.id, friend_id: demo.id }
+friend2 = { user_id: demo.id, friend_id: user2.id }
+friend3 = { user_id: user2.id, friend_id: demo.id }
+
+Friend.create!(friend1)
+Friend.create!(friend2)
+Friend.create!(friend3)
 
 
-route1 = Routeslog.create!(route_title: 'Ferry Builing run', distance: 2, user_id: demo.id, description: 'asd')
 
 
-
-route2 = Routeslog.create!(route_title: 'second', distance: 2, user_id: demo.id, description: 'asd')
-
-
-
-# ########## ROUTE LOG ############
-# routeslog1 = {route_title: 'Around the lake', distance: 3, user_id: user1.id}
-# routeslog2 = {route_title: 'Ferry Builing run', distance: 2, user_id: user2.id}
-
-# routeslog1 = Routeslog.create!(routeslog1)
-# routeslog2 = Routeslog.create!(routeslog2)
-
-
-# ########### MAPPING ROUTES #############
-
-# mapping1 = {latitude: 37.803134, longitude: -122.258079, route_id: routeslog1.id}
-# mapping2 = {latitude: 37.795861, longitude: -122.391817, route_id: routeslog2.id}
-
-# mapping1 = Mapping.create!(mapping1)
-# mapping2 = Mapping.create!(mapping2)
 
 
