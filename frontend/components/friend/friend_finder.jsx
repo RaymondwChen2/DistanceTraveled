@@ -31,17 +31,16 @@ class FriendFinder extends React.Component {
     render(){
         let { users, friends, currentUser } = this.props;
         let friendsArr = [];
-        debugger;
-        Object.values(friends).forEach(friend => friendsArr.push(friend.friend_id));
+        // Object.values(friends).forEach(friend => friendsArr.push(friend.friend_id));
 
-        let unfriendUsers = [];
-        Object.values(users.forEach(user => {
-            if (user.id !== currentUser.id && !friendsArr.includes(user.id)){
-                if (user.first_name.toLowerCase().includes(this.state.search.toLowerCase() || user.last_name.toLowerCase().includes(this.state.search.toLowerCase()))){
-                    unfriendUsers.push(user);
-                }
-            }
-        }));
+        // let unfriendUsers = [];
+        // Object.values(users.forEach(user => {
+        //     if (user.id !== currentUser.id && !friendsArr.includes(user.id)){
+        //         if (user.first_name.toLowerCase().includes(this.state.search.toLowerCase() || user.last_name.toLowerCase().includes(this.state.search.toLowerCase()))){
+        //             unfriendUsers.push(user);
+        //         }
+        //     }
+        // }));
         return(
             <div>
                 <div>Find Friends by First or Last name:</div>

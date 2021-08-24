@@ -13,6 +13,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def random
+    @users = User.first(10)
+    render :random
+  end
+
+  def search
+    @users = User.where("first_name ILIKE ? Or last_name ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    render :random
+  end
+
 
   def create
     @user = User.new(user_params)
