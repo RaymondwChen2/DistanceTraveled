@@ -10,8 +10,11 @@ class FindFriendIndexItem extends React.Component {
         let { user } = this.props;
         return(
             <div>
-                <Link></Link>
+                <Link to={`/users/${user.id}`}></Link>
+                <Link to={`users/${user.id}`}>{user.first_name} {user.last_name}</Link>
             </div>
         )
     }
 }
+
+export default FindFriendIndexItem

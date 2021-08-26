@@ -1,5 +1,6 @@
 import React from 'react';
-import { requestUserSearch } from '../../actions/user';
+import { requestUserSearch, requestRandomUsers, requestUser } from '../../actions/user';
+import FindFriendIndexItem from './find_friends_index_item';
 
 class FriendFinder extends React.Component {
     constructor(props){
@@ -18,7 +19,7 @@ class FriendFinder extends React.Component {
 
 
     onSearch(){
-        requestUserSearch(this.state.search);
+        this.props.requestUserSearch(this.state.search);
     }
 
     update(field) {
@@ -33,7 +34,7 @@ class FriendFinder extends React.Component {
         let friendsArr = [];
         // Object.values(friends).forEach(friend => friendsArr.push(friend.friend_id));
 
-        // let unfriendUsers = [];
+        let unfriendUsers = [];
         // Object.values(users.forEach(user => {
         //     if (user.id !== currentUser.id && !friendsArr.includes(user.id)){
         //         if (user.first_name.toLowerCase().includes(this.state.search.toLowerCase() || user.last_name.toLowerCase().includes(this.state.search.toLowerCase()))){
@@ -47,6 +48,9 @@ class FriendFinder extends React.Component {
                 <div> 
                     <input type="text" value={this.state.search}  onChange={this.update('search')}/>
                     <button onClick={this.onSearch}>Search</button>
+                </div>
+                <div>
+                    {unfriendUsers.map(user => <FindFriendIndexItem key={user.id} user={user}/>)}
                 </div>
             </div>
         )
