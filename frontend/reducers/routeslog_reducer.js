@@ -1,4 +1,4 @@
-import {RECEIVE_ALL_ROUTESLOGS, RECEIVE_ROUTE, REMOVE_ROUTE} from '../actions/routeslog';
+import {RECEIVE_ALL_ROUTESLOGS, RECEIVE_ROUTE, REMOVE_ROUTE} from '../actions/routeslog_actions';
 
 const routeslogReducer = (state = {}, action) => {
   Object.freeze(state)

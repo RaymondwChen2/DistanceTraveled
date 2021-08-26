@@ -1,60 +1,64 @@
 import React from 'react';
-import { requestUserSearch, requestRandomUsers, requestUser } from '../../actions/user';
-import FindFriendIndexItem from './find_friends_index_item';
+import { requestUserSearch } from '../../actions/user_actions';
+import FindFriendsIndexItem from './find_friends_index_item';
 
-class FriendFinder extends React.Component {
-    constructor(props){
-        super(props);
+class FindFriends extends React.Component {
+    constructor(props) {
+        super(props)
         this.state = {
-            search: ''
+            query: ''
         };
 
-        this.onSearch = this.onSearch.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.requestFriends(this.props.currentUser.id);
-        // this.props.requestRandomUsers();
-    }
-
-
-    onSearch(){
-        this.props.requestUserSearch(this.state.search);
+        this.props.requestRandomUsers();
     }
 
     update(field) {
         return e => {
-            this.setState({ [field]: e.currentTarget.value});
-        };
+            this.setState({ [field]: e.currentTarget.value });
+        }
     }
 
+    handleSearch() {
+        requestUserSearch(this.props.requestUserSearch(this.state.query));
+    }
 
-    render(){
-        let { users, friends, currentUser } = this.props;
-        let friendsArr = [];
-        // Object.values(friends).forEach(friend => friendsArr.push(friend.friend_id));
+    render() {
+        const { users, friendships, currentUser } = this.props;
+        const friendsIdsArr = [];
+        Object.values(friendships).forEach(friendship => friendsIdsArr.push(friendship.friend_id))
 
-        let unfriendUsers = [];
-        // Object.values(users.forEach(user => {
-        //     if (user.id !== currentUser.id && !friendsArr.includes(user.id)){
-        //         if (user.first_name.toLowerCase().includes(this.state.search.toLowerCase() || user.last_name.toLowerCase().includes(this.state.search.toLowerCase()))){
-        //             unfriendUsers.push(user);
-        //         }
-        //     }
-        // }));
-        return(
-            <div>
-                <div>Find Friends by First or Last name:</div>
-                <div> 
-                    <input type="text" value={this.state.search}  onChange={this.update('search')}/>
-                    <button onClick={this.onSearch}>Search</button>
+        const unfriendedUsers = [];
+        Object.values(users).forEach(user => {
+            if (user.id !== currentUser.id && !friendsIdsArr.includes(user.id)) {
+                if (user.first_name.toLowerCase().includes(this.state.query.toLowerCase()) || user.last_name.toLowerCase().includes(this.state.query.toLowerCase())) {
+                    unfriendedUsers.push(user);
+                }
+            }
+        });
+
+        return (
+            <div className='find-friends-container'>
+                <span className='find-friends-span'>Find Friends by First Name or Last Name:</span>
+                <div className='search-bar-container'>
+                    <input type="text" className='friend-search-bar' value={this.state.query} onChange={this.update("query")} />
+                    <span className='friend-search-btn' onClick={this.handleSearch}>SEARCH</span>
                 </div>
-                <div>
-                    {unfriendUsers.map(user => <FindFriendIndexItem key={user.id} user={user}/>)}
+                <span className='checkout-friends-span'>Or check out some of our favorite users!</span>
+                <div className='more-friends-list'>
+                    {
+                        unfriendedUsers.map(user => <FindFriendsIndexItem key={user.id} user={user} />)
+                    }
                 </div>
             </div>
         )
     }
 }
 
-export default FriendFinder
+
+
+export default FindFriends;

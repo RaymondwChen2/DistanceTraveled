@@ -10,6 +10,7 @@ import RoutesLogIndexContainer from "./routeslog/routeslog_index_container";
 import RoutesLogEditContainer from './routeslog/routeslog_edit_container';
 import FriendsIndexContainer from './friend/friend_index_container';
 import FriendFinderContainer from './friend/friend_finder_container';
+import UsersShowContainer from './user/user_show_container';
 
 
 const App = () => (
@@ -17,12 +18,13 @@ const App = () => (
     <nav className='nav-link'>
     <GreetingContainer/>
     </nav>
-    <Switch>
       <ProtectedRoute exact path='/dashboard/friends' component={FriendsIndexContainer} />
       <ProtectedRoute exact path='/dashboard/friends/find' component={FriendFinderContainer} />
       <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer}/> 
       <ProtectedRoute exact path="/routeslog/:id/edit" component={RoutesLogEditContainer}/> 
+      <ProtectedRoute exact path='users/:userId' component={UsersShowContainer}/>
       <ProtectedRoute exact path="/create_route" component={MappingIndexContainer}/> 
+    <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute path="/" component={SplashContainer}/>

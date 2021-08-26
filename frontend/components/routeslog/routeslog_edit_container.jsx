@@ -1,7 +1,7 @@
 import React from 'react';
 import RouteslogEdit from './routeslog_edit';
 import { connect } from 'react-redux'
-import { fetchRoutelog, updateRouteLog } from '../../actions/routeslog';
+import { fetchRoutelog, updateRouteLog } from '../../actions/routeslog_actions';
 
 const mSTP = (state, ownProps) => {
   // console.log(state.routeslog[ownProps.match.params.id])

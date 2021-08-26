@@ -1,4 +1,4 @@
-import * as APIUtil from '../utils/routeslog';
+import * as APIUtil from '../utils/routeslog_api_util';
 
 export const RECEIVE_ALL_ROUTESLOGS = 'RECEIVE_ALL_ROUTESLOGS';
 export const RECEIVE_ROUTE = 'RECEIVE_ROUTE';

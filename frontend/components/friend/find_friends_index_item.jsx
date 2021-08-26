@@ -1,20 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class FindFriendIndexItem extends React.Component {
-    constructor(props){
+class FindFriendsIndexItem extends React.Component {
+    constructor(props) {
         super(props);
     }
-
     render() {
-        let { user } = this.props;
-        return(
-            <div>
-                <Link to={`/users/${user.id}`}></Link>
-                <Link to={`users/${user.id}`}>{user.first_name} {user.last_name}</Link>
+        const { user } = this.props;
+        return (
+            <div className='friend-index-item'>
+                <Link className="fas fa-running friend-index-logo" to={`/users/${user.id}`}></Link>
+                <div className='friend-content'>
+                    <div className='full-name-container'>
+                        <Link className="full-name-link" to={`/users/${user.id}`}>{user.first_name} {user.last_name}</Link>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
-export default FindFriendIndexItem
+export default FindFriendsIndexItem;

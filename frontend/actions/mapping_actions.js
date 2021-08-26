@@ -1,4 +1,4 @@
-import * as APIUtil from '../utils/mapping';
+import * as APIUtil from '../utils/mapping_api_util';
 
 
 export const RECEIVE_ALL_MAPPINGS = 'RECEIVE_ALL_MAPPINGS'

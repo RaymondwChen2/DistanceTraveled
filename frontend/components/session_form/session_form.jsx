@@ -1,5 +1,5 @@
 import React from 'react';
-import { login } from '../../utils/session';
+import { login } from '../../utils/session_api_util';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,8 +8,8 @@ class SessionForm extends React.Component {
       username: '',
       password: '',
       email: '',
-      firstName: '',
-      lastName: ''
+      first_name: '',
+      last_name: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onSignUpForm = this.onSignUpForm.bind(this);
@@ -142,15 +142,15 @@ class SessionForm extends React.Component {
                 <br/>
                   <input type="text"
                     placeholder="First name"
-                    value={this.state.firstName}
-                    onChange={this.update('firstName')}
+                    value={this.state.first_name}
+                    onChange={this.update('first_name')}
                     className="signup-input"
                   />
                 <br/>
                   <input type="text"
                     placeholder="Last name"
                     value={this.state.lastName}
-                    onChange={this.update('lastName')}
+                    onChange={this.update('last_name')}
                     className="signup-input"
                   />
               <br/>

@@ -12,7 +12,7 @@ import { AiFillCaretRight } from 'react-icons/ai'
 
 class RouteslogEdit extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
     
     this.state = {
       waypoints: this.props.route && this.props.route.waypoints.length ?  JSON.parse(this.props.route.waypoints) : [],
@@ -53,7 +53,7 @@ class RouteslogEdit extends React.Component {
                               description: this.state.description, 
                               distance: this.MarkerManager.distance,
                               id: this.props.route.id
-    }).then(this.props.history.push('/'))
+    }).then(this.props.history.push('/dashboard'))
   }
 
   updateDescription(e) {

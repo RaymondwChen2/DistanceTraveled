@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, logout } from '../../actions/session';
+import { login, logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 
 
@@ -14,4 +14,4 @@ const mDTP = dispatch => ({
   processForm: (user) => dispatch(login(user))
 });
 
-export default connect(mSTP, mDTP)(Greeting)
+export default connect(mSTP, mDTP)(Greeting);

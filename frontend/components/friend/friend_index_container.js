@@ -1,19 +1,19 @@
-import FriendIndex from './friend_finder'
+import FriendsIndex from './find_friends_index_item';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { deleteFriendship, requestFriends } from '../../actions/friend';
-import { requestUserSearch } from '../../actions/user';
+import { deleteFriendship, requestFriends } from '../../actions/friend_actions';
+import { requestUserFriends } from '../../actions/user_actions';
 
 const mSTP = ({ entities, session }) => ({
     currentUser: entities.users[session.id],
-    friends: entities.friends,
+    friendships: entities.friendships,
     users: entities.users
 });
 
 const mDTP = dispatch => ({
     requestFriends: userId => dispatch(requestFriends(userId)),
-    deleteFriendship: friendId => dispatch(deleteFriendship(friendId)),
-    requestUserSearch: search => dispatch(requestUserSearch(search))
+    deleteFriendship: friendshipId => dispatch(deleteFriendship(friendshipId)),
+    requestUserFriends: userId => dispatch(requestUserFriends(userId))
 });
 
-export default withRouter(connect(mSTP, mDTP)(FriendIndex));
+export default withRouter(connect(mSTP, mDTP)(FriendsIndex));

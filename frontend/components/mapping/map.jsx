@@ -41,7 +41,7 @@ class TheMap extends React.Component {
     e.preventDefault();
     this.props.createRouteLog({
       waypoints : JSON.stringify(this.MarkerManager.waypts), route_title: this.state.route_title, description : this.state.description, distance : this.MarkerManager.distance
-    }).then(this.props.history.push('/'));
+    }).then(this.props.history.push('/dashboard'));
     
   }
 

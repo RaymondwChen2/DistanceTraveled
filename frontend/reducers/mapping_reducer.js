@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_MAPPINGS, RECEIVE_MAPPING } from "../actions/mapping";
+import { RECEIVE_ALL_MAPPINGS, RECEIVE_MAPPING } from "../actions/mapping_actions";
 
 const mappingReducer = (state = {}, action) => {
   Object.freeze(state)

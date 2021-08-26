@@ -1,57 +1,55 @@
 import React from 'react';
-import FindFriendIndexItem from './find_friends_index_item';
-import FriendFinder from './friend_finder';
+import FriendsIndexItem from './friends_index_item';
 
-class FriendIndex extends React.Component {
-    constructor(props){
-        super(props);
+class FriendsIndex extends React.Component {
+    constructor(props) {
+        super(props)
 
-        this.handleDelete = this.handleDelete.bind(this);
+        this.handleDelete = this.handleDelete.bind(this)
     }
-
     componentDidMount() {
-        let { currentUser } = this.props;
-        this.props.requestFriends(currentUser.id);
-        this.props.requestUserFriends(currentUser.id);
+        const { currentUser } = this.props
+        this.props.requestFriends(currentUser.id)
+        this.props.requestUserFriends(currentUser.id)
     }
 
-    handleDelete(friendId){
-        this.props.deleteFriendship(friendId);
+    handleDelete(friendshipId) {
+        this.props.deleteFriendship(friendshipId)
     }
 
-    render(){
-        let friends;
-        if (this.props.friends) {
-            friends = Object.values(this.props.friends);
+    render() {
+        let friendships;
+        if (this.props.friendships) {
+            friendships = Object.values(this.props.friendships)
         } else {
-            friends = [];
+            friendships = []
         }
 
         let comp;
-        if (friends.length === 0) {
+        if (friendships.length === 0) {
             comp = (
-                <div>
-                    <p>You have not added any friends yet. Click the Find Friends tab to get start </p>
+                <div className='friends-content-container'>
+                    <p className='no-friends-message'>You have not added any friends yet. Click the Find Friends tab above to get started.</p>
                 </div>
             )
         } else {
-            comp = 
-            <div>
+            comp = <div className='friends-content-container'>
                 {
-                    friends.map((friend, i) => (
-                        <FindFriendIndexItem
+                    friendships.map((friendship, i) => (
+                        <FriendsIndexItem
                             key={i}
-                            friend={friend}
+                            friendship={friendship}
                             deleteFriendship={this.handleDelete}
                             requestUserFriends={this.props.requestUserFriends}
                             users={this.props.users}
-                        />
-                    ))
+                        />)
+                    )
                 }
             </div>
         }
-        return(comp)
+
+        return comp
     }
 }
 
-export default FriendIndex
+export default FriendsIndex

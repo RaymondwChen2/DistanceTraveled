@@ -1,11 +1,11 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session';
-import { RECEIVE_USERS, RECEIVE_FRIENDS, RECEIVE_USER } from '../actions/user';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_USER, RECEIVE_FRIENDS, RECEIVE_USERS } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
-  let nextState = Object.assign({}, state);
+  let nextState = { ...state };
   let userId;
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_CURRENT_USER:
       userId = parseInt(Object.keys(action.currentUser)[0]);
       nextState[userId] = action.currentUser[userId];
@@ -15,10 +15,10 @@ const usersReducer = (state = {}, action) => {
       nextState[userId] = Object.values(action.user)[0];
       return nextState;
     case RECEIVE_FRIENDS:
-      nextState = {...nextState, ...action.friends}
+      nextState = { ...nextState, ...action.friends };
       return nextState;
     case RECEIVE_USERS:
-      nextState = {...nextState, ...action.users}
+      nextState = { ...nextState, ...action.users };
       return nextState;
     default:
       return state;

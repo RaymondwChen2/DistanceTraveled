@@ -1,22 +1,24 @@
-import FriendFinder from './friend_finder'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { deleteFriendship, requestFriends } from '../../actions/friend';
-import { requestUserSearch, requestUser, requestRandomUsers } from '../../actions/user';
+import { requestRandomUsers, requestUser, requestUserSearch } from '../../actions/user_actions';
+import { requestFriends } from '../../actions/friend_actions';
+import FindFriends from './friend_finder';
 
-const mSTP = ({ entities, session }) => ({
-    currentUser: entities.users[session.id],
-    currentUserId: session.id,
-    friends: entities.friends,
-    users: entities.users
-});
+
+
+const mSTP = ({ entities, session }) => {
+    return {
+        currentUser: entities.users[session.id],
+        currentUserId: session.id,
+        friendships: entities.friendships,
+        users: entities.users
+    }
+};
 
 const mDTP = dispatch => ({
     requestFriends: userId => dispatch(requestFriends(userId)),
-    deleteFriendship: friendId => dispatch(deleteFriendship(friendId)),
-    requestUserSearch: search => dispatch(requestUserSearch(search)),
-    requestUser: userId => dispatch(requestUser(userId)),
-    requestRandomUsers: () => dispatch(requestRandomUsers())
+    requestRandomUsers: () => dispatch(requestRandomUsers()),
+    requestUserSearch: query => dispatch(requestUserSearch(query)),
+    requestUser: userId => dispatch(requestUser(userId))
 });
 
-export default withRouter(connect(mSTP, mDTP)(FriendFinder));
+export default connect(mSTP, mDTP)(FindFriends);

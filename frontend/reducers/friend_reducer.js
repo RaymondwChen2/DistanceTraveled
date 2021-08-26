@@ -1,10 +1,12 @@
-import {RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, RECEIVE_USER_FRIENDS
-} from '../actions/friendships_action';
+import {
+    RECEIVE_FRIENDSHIP,
+    REMOVE_FRIENDSHIP,
+    RECEIVE_USER_FRIENDS
+} from '../actions/friend_actions';
 
 const friendshipsReducer = (state = {}, action) => {
     Object.freeze(state);
-    let nextState = Object.assign({}, state);
-
+    const nextState = { ...state };
     switch (action.type) {
         case RECEIVE_FRIENDSHIP:
             const friendshipId = Object.keys(action.friendship)[0];
