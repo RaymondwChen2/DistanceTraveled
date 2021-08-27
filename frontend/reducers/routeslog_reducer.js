@@ -2,11 +2,12 @@ import {RECEIVE_ALL_ROUTESLOGS, RECEIVE_ROUTE, REMOVE_ROUTE} from '../actions/ro
 
 const routeslogReducer = (state = {}, action) => {
   Object.freeze(state)
-  const nextState = Object.assign({}, state);
+  let nextState = Object.assign({}, state);
 
   switch (action.type){
     case RECEIVE_ALL_ROUTESLOGS:
-      action.routes.forEach(route => {
+      nextState = {};
+    action.routes.forEach(route => {
         nextState[route.id] = route;
       });
       return nextState;

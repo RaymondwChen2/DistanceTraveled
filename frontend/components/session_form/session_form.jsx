@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
                   username: 'Guest',
                   password: '123456',
                   email: 'guest@guest.com'})
-              }} className="demo-button"> Login with demo
+              }}className="demo-button"> Login with demo
             </button>
             <br/>
             <div className="or">

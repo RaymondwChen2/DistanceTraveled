@@ -7,7 +7,7 @@ import friendshipsReducer from './friend_reducer';
 const entitiesReducer = combineReducers({
   users: usersReducer,
   mappings: mappingReducer,
-  // routeslog: routeslog_reducer
+  routeslog: routeslog_reducer,
   friendships: friendshipsReducer
 });
 

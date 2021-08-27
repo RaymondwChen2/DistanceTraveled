@@ -22,7 +22,7 @@ const App = () => (
       <ProtectedRoute exact path='/dashboard/friends/find' component={FriendFinderContainer} />
       <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer}/> 
       <ProtectedRoute exact path="/routeslog/:id/edit" component={RoutesLogEditContainer}/> 
-      <ProtectedRoute exact path='users/:userId' component={UsersShowContainer}/>
+      <ProtectedRoute exact path='/users/:userId' component={UsersShowContainer}/>
       <ProtectedRoute exact path="/create_route" component={MappingIndexContainer}/> 
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
