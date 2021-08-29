@@ -1,6 +1,6 @@
-import {connect} from 'react-redux'
-import TheRoutesLog from './routeslog_index'
-import { fetchRoutesLogs, updateRouteLog, deleteRouteLog } from "../../actions/routeslog_actions"
+import {connect} from 'react-redux';
+import TheRoutesLog from './routeslog_index';
+import { fetchRoutesLogs, updateRouteLog, deleteRouteLog } from "../../actions/routeslog_actions";
 
 const mSTP = ( state) => {
   return {

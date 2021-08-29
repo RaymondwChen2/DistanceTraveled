@@ -16,14 +16,13 @@ class UsersShowRouteItem extends React.Component {
 
     render() {
         const { route } = this.props;
-
         return (
             <tr className="user-table-row">
-                <td><Link to={`/routes/${route.id}`} className='route-link'>{route.name}</Link></td>
+                <td><Link to={`/routeslog/${route.id}`} className='route-link'>{route.route_title}</Link></td>
                 <td>{this.parseDate()}</td>
                 <td>{route.distance}</td>
                 <td>
-                    <Link to={`/routes/${route.id}`} className='route-link'>View</Link>
+                    <Link to={`/routeslog/${route.id}`} className='route-link'>View</Link>
                 </td>
             </tr>
         )

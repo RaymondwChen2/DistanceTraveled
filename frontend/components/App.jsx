@@ -11,6 +11,7 @@ import RoutesLogEditContainer from './routeslog/routeslog_edit_container';
 import FriendsIndexContainer from './friend/friend_index_container';
 import FriendFinderContainer from './friend/friend_finder_container';
 import UsersShowContainer from './user/user_show_container';
+import RouteslogShowContainer from './routeslog/routeslog_show_container';
 
 
 const App = () => (
@@ -20,14 +21,15 @@ const App = () => (
     </nav>
       <ProtectedRoute exact path='/dashboard/friends' component={FriendsIndexContainer} />
       <ProtectedRoute exact path='/dashboard/friends/find' component={FriendFinderContainer} />
-      <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer}/> 
-      <ProtectedRoute exact path="/routeslog/:id/edit" component={RoutesLogEditContainer}/> 
-      <ProtectedRoute exact path='/users/:userId' component={UsersShowContainer}/>
-      <ProtectedRoute exact path="/create_route" component={MappingIndexContainer}/> 
+      <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer} /> 
+      <ProtectedRoute exact path="/routeslog/:id/edit" component={RoutesLogEditContainer} /> 
+      <ProtectedRoute exact path='/users/:userId' component={UsersShowContainer} />
+      <ProtectedRoute exact path="/create_route" component={MappingIndexContainer} /> 
+      <ProtectedRoute exact path="/routeslog/:id" component={RouteslogShowContainer} />
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <AuthRoute path="/" component={SplashContainer}/>
+      <AuthRoute path="/" component={SplashContainer} />
     </Switch>
 
   </div>

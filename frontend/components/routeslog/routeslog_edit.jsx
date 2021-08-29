@@ -35,14 +35,11 @@ class RouteslogEdit extends React.Component {
     };
     
     if (!this.props.route){
-      this.props.fetchRoutelog(this.props.match.params.id)
-      // this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
+      this.props.fetchRoutelog(this.props.match.params.id);
     } 
-    console.log(this.props)
-    console.log(this.mapNode)
+
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.state.waypoints);
-  
   }
 
   handleSubmit(e) {
@@ -53,7 +50,7 @@ class RouteslogEdit extends React.Component {
                               description: this.state.description, 
                               distance: this.MarkerManager.distance,
                               id: this.props.route.id
-    }).then(this.props.history.push('/dashboard'))
+    }).then(this.props.history.push('/dashboard'));
   }
 
   updateDescription(e) {
@@ -81,7 +78,7 @@ class RouteslogEdit extends React.Component {
   
   render(){
     if(!this.props.route){
-      return null
+      return null;
     }
     return (
     <div className='map-container'>
