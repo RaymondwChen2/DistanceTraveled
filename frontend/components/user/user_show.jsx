@@ -1,5 +1,6 @@
 import React from 'react';
 import UsersShowRouteItem from './user_show_route_items';
+import { Link } from 'react-router-dom';
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -49,6 +50,8 @@ class UserShow extends React.Component {
 
         return (
             <div className='user-show-container'>
+                <Link to={"/dashboard/friends/"}>Friend list</Link>
+                <Link to={"/dashboard/friends/find"}>Find Friends</Link>
                 <div className='user-basic-info'>
                     <span className="fas fa-running user-show-avatar"></span>
                     <div className='next-to-avatar-container'>

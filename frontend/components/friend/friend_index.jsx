@@ -1,5 +1,6 @@
 import React from 'react';
 import FriendsIndexItem from './friend_index_item';
+import { Link } from 'react-router-dom';
 
 class FriendsIndex extends React.Component {
     constructor(props) {
@@ -8,7 +9,6 @@ class FriendsIndex extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
     componentDidMount() {
-        debugger
         const { currentUser } = this.props;
         this.props.requestFriends(currentUser.id);
         this.props.requestUserFriends(currentUser.id);
@@ -31,6 +31,7 @@ class FriendsIndex extends React.Component {
             comp = (
                 <div className='friends-content-container'>
                     <p className='no-friends-message'>You have not added any friends yet. Click the Find Friends tab above to get started.</p>
+                    <Link to={"/dashboard/friends/find"}>Find Friends</Link>
                 </div>
             )
         } else {
@@ -46,6 +47,8 @@ class FriendsIndex extends React.Component {
                         />)
                     )
                 }
+                <Link to={"/dashboard/friends/"}>Friend list</Link>
+                <Link to={"/dashboard/friends/find"}>Find Friends</Link>
             </div>
         }
 

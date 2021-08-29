@@ -19,7 +19,7 @@ class TheRoutesLog extends React.Component {
     <div className='route-container'>
       <div className="route-head">
         <h1>Routes</h1>
-        <Link to={"/dashboard/friends/find"}>Friend list</Link>
+        <Link to={"/dashboard/friends"}>Friend list</Link>
       </div>
         <div className='route-placement'>
           <h2>Title</h2>

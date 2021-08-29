@@ -11,6 +11,7 @@ class FriendsIndexItem extends React.Component {
 
         return (
             <div className='friend-index-item'>
+                
                 <Link className="fas fa-running friend-index-logo" to={`/users/${friend.id}`}></Link>
                 <div className='friend-content'>
                     <div className='full-name-container'>

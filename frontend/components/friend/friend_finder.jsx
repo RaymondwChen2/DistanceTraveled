@@ -4,7 +4,7 @@ import FindFriendsIndexItem from './find_friends_index_item';
 
 class FindFriends extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             query: ''
         };
