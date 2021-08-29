@@ -1,28 +1,29 @@
 import React from 'react';
-import FriendsIndexItem from './friends_index_item';
+import FriendsIndexItem from './friend_index_item';
 
 class FriendsIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
-        this.handleDelete = this.handleDelete.bind(this)
+        this.handleDelete = this.handleDelete.bind(this);
     }
     componentDidMount() {
-        const { currentUser } = this.props
-        this.props.requestFriends(currentUser.id)
-        this.props.requestUserFriends(currentUser.id)
+        debugger
+        const { currentUser } = this.props;
+        this.props.requestFriends(currentUser.id);
+        this.props.requestUserFriends(currentUser.id);
     }
 
     handleDelete(friendshipId) {
-        this.props.deleteFriendship(friendshipId)
+        this.props.deleteFriendship(friendshipId);
     }
 
     render() {
         let friendships;
         if (this.props.friendships) {
-            friendships = Object.values(this.props.friendships)
+            friendships = Object.values(this.props.friendships);
         } else {
-            friendships = []
+            friendships = [];
         }
 
         let comp;

@@ -1,4 +1,4 @@
-import FriendsIndex from './find_friends_index_item';
+import FriendsIndex from './friend_index';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { deleteFriendship, requestFriends } from '../../actions/friend_actions';

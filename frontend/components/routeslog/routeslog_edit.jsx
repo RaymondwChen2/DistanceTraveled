@@ -1,11 +1,11 @@
 import React from 'react';
 import MarkerManager from '../../utils/marker_manager';
 import TheMap from '../mapping/map';
-import { AiOutlineUndo } from 'react-icons/ai'
-import { MdClear } from 'react-icons/md'
-import { FaExchangeAlt } from 'react-icons/fa'
-import { AiFillCaretLeft } from 'react-icons/ai'
-import { AiFillCaretRight } from 'react-icons/ai'
+import { AiOutlineUndo } from 'react-icons/ai';
+import { MdClear } from 'react-icons/md';
+import { FaExchangeAlt } from 'react-icons/fa';
+import { AiFillCaretLeft } from 'react-icons/ai';
+import { AiFillCaretRight } from 'react-icons/ai';
 
 
 

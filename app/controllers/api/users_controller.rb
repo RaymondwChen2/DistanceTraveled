@@ -10,12 +10,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:id])
-    # user_id = current_user.id
-    # friendships = Friend.where("user_id = ?", user_id)
-    # friend_ids = friendships.map { |friendship| friendship.friend_id }
-    # @friends = User.find(friend_ids)
-    render json: @user
+    user_id = current_user.id
+    friendships = Friend.where("user_id = ?", user_id)
+    friend_ids = friendships.map { |friendship| friendship.friend_id }
+    @friends = User.find(friend_ids)
+    render :index
   end
   
   def random

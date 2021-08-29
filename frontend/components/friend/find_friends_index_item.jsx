@@ -7,6 +7,7 @@ class FindFriendsIndexItem extends React.Component {
     }
     render() {
         const { user } = this.props;
+        debugger
         return (
             <div className='friend-index-item'>
                 <Link className="fas fa-running friend-index-logo" to={`/users/${user.id}`}></Link>
