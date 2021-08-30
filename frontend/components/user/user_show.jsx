@@ -36,9 +36,9 @@ class UserShow extends React.Component {
         }
 
         if (friendshipId) {
-            return <span className='already-friended-btn' onClick={() => this.props.deleteFriendship(friendshipId)}>UNFRIEND</span>
+            return <span className='already-friended-btn' onClick={() => this.props.deleteFriendship(friendshipId)}>UNFOLLOW</span>
         } else {
-            return <span className='add-friend-btn' onClick={this.handleAddFriend}>ADD FRIEND</span>
+            return <span className='add-friend-btn' onClick={this.handleAddFriend}>FOLLOW</span>
         }
     }
 
@@ -51,7 +51,7 @@ class UserShow extends React.Component {
         return (
             <div className='user-show-container'>
                 <Link to={"/dashboard/friends/"}>Friend list</Link>
-                <Link to={"/dashboard/friends/find"}>Find Friends</Link>
+                <Link to={"/dashboard/friends/find"}>Find Users</Link>
                 <div className='user-basic-info'>
                     <span className="fas fa-running user-show-avatar"></span>
                     <div className='next-to-avatar-container'>
@@ -67,7 +67,6 @@ class UserShow extends React.Component {
                                     <th className='table-header'>Route Name</th>
                                     <th className='table-header'>Created</th>
                                     <th className='table-header'>Distance</th>
-                                    <th className='table-header'>Activity</th>
                                     <th className='table-header'>Options</th>
                                 </tr>
                             </thead>

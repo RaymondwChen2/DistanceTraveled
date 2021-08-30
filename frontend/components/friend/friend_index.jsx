@@ -1,6 +1,7 @@
 import React from 'react';
 import FriendsIndexItem from './friend_index_item';
 import { Link } from 'react-router-dom';
+import Tab from './friend_tab';
 
 class FriendsIndex extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ class FriendsIndex extends React.Component {
     handleDelete(friendshipId) {
         this.props.deleteFriendship(friendshipId);
     }
-
+    
     render() {
         let friendships;
         if (this.props.friendships) {
@@ -25,30 +26,32 @@ class FriendsIndex extends React.Component {
         } else {
             friendships = [];
         }
-
+        
         let comp;
         if (friendships.length === 0) {
             comp = (
                 <div className='friends-content-container'>
-                    <p className='no-friends-message'>You have not added any friends yet. Click the Find Friends tab above to get started.</p>
-                    <Link to={"/dashboard/friends/find"}>Find Friends</Link>
+                    <p className='no-friends-message'>You are not following any yet. Click the Find Users above to get started.</p>
+                    <Link to={"/dashboard/friends/find"}>Find Users</Link>
                 </div>
             )
         } else {
-            comp = <div className='friends-content-container'>
-                {
-                    friendships.map((friendship, i) => (
-                        <FriendsIndexItem
+            comp = <div className='friend-index-container'>  
+                <Tab />
+                <div className='friends-content-container'>
+                    <br/>
+                    {
+                        friendships.map((friendship, i) => (
+                            <FriendsIndexItem
                             key={i}
                             friendship={friendship}
                             deleteFriendship={this.handleDelete}
                             requestUserFriends={this.props.requestUserFriends}
                             users={this.props.users}
-                        />)
-                    )
-                }
-                <Link to={"/dashboard/friends/"}>Friend list</Link>
-                <Link to={"/dashboard/friends/find"}>Find Friends</Link>
+                            />)
+                            )
+                    }
+                </div>
             </div>
         }
 

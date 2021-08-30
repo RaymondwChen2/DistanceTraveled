@@ -1,6 +1,7 @@
 import React from 'react';
 import { requestUserSearch } from '../../actions/user_actions';
 import FindFriendsIndexItem from './find_friends_index_item';
+import  Tab  from './friend_tab';
 
 class FindFriends extends React.Component {
     constructor(props) {
@@ -42,17 +43,19 @@ class FindFriends extends React.Component {
         });
 
         return (
-            <div className='find-friends-container'>
-                <span className='find-friends-span'>Find Friends by First Name or Last Name:</span>
-                <div className='search-bar-container'>
-                    <input type="text" className='friend-search-bar' value={this.state.query} onChange={this.update("query")} />
-                    <span className='friend-search-btn' onClick={this.handleSearch}>SEARCH</span>
-                </div>
-                <span className='checkout-friends-span'>Or check out some of our favorite users!</span>
-                <div className='more-friends-list'>
-                    {
-                        unfriendedUsers.map(user => <FindFriendsIndexItem key={user.id} user={user} />)
-                    }
+            <div>
+                <Tab/>
+                <div className='find-friends-container'>
+                    <span className='find-friends-span'>Find Users by First Name or Last Name:</span>
+                    <div className='search-bar-container'>
+                        <input type="text" className='friend-search-bar' value={this.state.query} onChange={this.update("query")} placeholder='Enter Name'/>
+                    </div>
+                    <span className='checkout-friends-span'>Or check out some of our favorite users!</span>
+                    <div className='more-friends-list'>
+                        {
+                            unfriendedUsers.map(user => <FindFriendsIndexItem key={user.id} user={user} />)
+                        }
+                    </div>
                 </div>
             </div>
         )
