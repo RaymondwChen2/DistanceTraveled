@@ -14,7 +14,7 @@ const mDTP = dispatch => {
     fetchRoutesLogs: (userId) => dispatch(fetchRoutesLogs(userId)),
     updateRouteLog: (route) => dispatch(updateRouteLog(route)),
     deleteRouteLog: (routeId) => dispatch(deleteRouteLog(routeId))
-  }
-}
+  };
+};
 
 export default connect(mSTP, mDTP)(TheRoutesLog);

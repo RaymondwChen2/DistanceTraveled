@@ -8,7 +8,7 @@ class FindFriendsIndexItem extends React.Component {
     render() {
         const { user } = this.props;
         return (
-            <div>
+            <div className='find-friend-index-item-container'>
                 <Link to={`/users/${user.id}`}></Link>
                 <div>
                     <div>
