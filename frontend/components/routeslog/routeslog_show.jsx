@@ -7,7 +7,6 @@ import { AiFillCaretRight } from 'react-icons/ai';
 class RouteslogShow extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             sidebarDisplay: ''
         };
@@ -15,7 +14,8 @@ class RouteslogShow extends React.Component {
         this.directionsService = new google.maps.DirectionsService();
         this.directionsRenderer = new google.maps.DirectionsRenderer();
 
-        if (JSON.parse(this.props.route.waypoints.length) > 0) {
+        let waypts = JSON.parse(this.props.route.waypoints);
+        if (waypts.length > 0) {
             this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer);
             this.directionsRenderer.setMap(this.map);
         }
@@ -35,7 +35,7 @@ class RouteslogShow extends React.Component {
         }
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        // this.directionsRenderer.setMap(this.map);
+        this.directionsRenderer.setMap(this.map);
 
     }
 
@@ -54,17 +54,6 @@ class RouteslogShow extends React.Component {
             (response, status) => {
                 if (status === "OK" && response) {
                     directionsRenderer.setDirections(response);
-                    const route = response.routes[0];
-                    this.summaryPanel.innerHTML = "";
-
-                    // For each route, display summary information.
-                    for (let i = 0; i < route.legs.length; i++) {
-                        const routeSegment = i + 1;
-                        this.distance = route.legs[i].distance.text;
-                        this.summaryPanel.innerHTML += 'Distance: ' + route.legs[i].distance.text + '<br>'
-                    }
-                } else {
-                    window.alert("Directions request failed due to " + status);
                 }
             }
         );
@@ -83,7 +72,7 @@ class RouteslogShow extends React.Component {
         }
     }
     render() {
-        debugger;
+    
         if (!this.props.route) {
             return null;
         }

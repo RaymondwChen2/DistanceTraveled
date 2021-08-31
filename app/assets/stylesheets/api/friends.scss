@@ -45,7 +45,7 @@
 }
 
 
-.find-friends-container{
+.find-users-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,4 +65,22 @@
 .friend-index-container{
     display: flex;
     flex-direction: column;
+}
+
+
+.find-users-span{
+    padding-top: 20px;
+}
+
+.search-bar-container{
+    padding-top: 20px;
+}
+
+.checkout-users-span{
+    padding-top: 20px;
+}
+
+.more-users-list{
+    padding-top: 20px;
+
 }

@@ -4,4 +4,34 @@
 
 
 
+.user-show-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 40px;
+}
+
+
+.users-table-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.users-table{
+    border: solid 1px black;
+    width: 1000px;
+}
+
+// .users-table-items{
+// }
+
+.show-fullname{
+    font-weight: 100px;
+    font-size: 20px;
+    padding-right: 20px;
+}
 

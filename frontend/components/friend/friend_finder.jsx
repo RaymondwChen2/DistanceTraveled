@@ -45,13 +45,13 @@ class FindFriends extends React.Component {
         return (
             <div>
                 <Tab/>
-                <div className='find-friends-container'>
-                    <span className='find-friends-span'>Find Users by First Name or Last Name:</span>
+                <div className='find-users-container'>
+                    <span className='find-users-span'>Find Users by First Name or Last Name:</span>
                     <div className='search-bar-container'>
                         <input type="text" className='friend-search-bar' value={this.state.query} onChange={this.update("query")} placeholder='Enter Name'/>
                     </div>
-                    <span className='checkout-friends-span'>Or check out some of our favorite users!</span>
-                    <div className='more-friends-list'>
+                    <span className='checkout-users-span'>Or check out some of our favorite users!</span>
+                    <div className='more-users-list'>
                         {
                             unfriendedUsers.map(user => <FindFriendsIndexItem key={user.id} user={user} />)
                         }

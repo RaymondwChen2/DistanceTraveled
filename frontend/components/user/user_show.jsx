@@ -1,6 +1,7 @@
 import React from 'react';
 import UsersShowRouteItem from './user_show_route_items';
 import { Link } from 'react-router-dom';
+import Tab from '../friend/friend_tab';
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -49,33 +50,33 @@ class UserShow extends React.Component {
         }
 
         return (
-            <div className='user-show-container'>
-                <Link to={"/dashboard/friends/"}>Friend list</Link>
-                <Link to={"/dashboard/friends/find"}>Find Users</Link>
-                <div className='user-basic-info'>
-                    <span className="fas fa-running user-show-avatar"></span>
-                    <div className='next-to-avatar-container'>
-                        <span className='show-page-fullname'>{user.first_name} {user.last_name}</span>
-                        {this.addFriendButton()}
+            <div>
+                <Tab />
+                <div className='user-show-container'>
+                    <div>
+                        <div>
+                            <span className='show-fullname'>{user.first_name} {user.last_name}</span>
+                            {this.addFriendButton()}
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div className='routes-table-container'>
-                        <table className='routes-table'>
-                            <thead>
-                                <tr>
-                                    <th className='table-header'>Route Name</th>
-                                    <th className='table-header'>Created</th>
-                                    <th className='table-header'>Distance</th>
-                                    <th className='table-header'>Options</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {Object.values(routes).map(route => <UsersShowRouteItem
-                                    key={route.id}
-                                    route={route} />)}
-                            </tbody>
-                        </table>
+                    <div>
+                        <div className='users-table-container'>
+                            <table className='users-table'>
+                                <thead>
+                                    <tr>
+                                        <th className='table-header'>Route Name</th>
+                                        <th className='table-header'>Created</th>
+                                        <th className='table-header'>Distance</th>
+                                        <th className='table-header'>Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody className='users-table-items'>
+                                    {Object.values(routes).map(route => <UsersShowRouteItem
+                                        key={route.id}
+                                        route={route} />)}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ export default class MarkerManager {
       this.calculateAndDisplayRoute(this.directionsService, this.directionsRenderer)
       this.directionsRenderer.setMap(this.map)
     }
-    this.updateMarkers()
+    this.updateMarkers();
   }
   
   undoMarker(){
