@@ -11,7 +11,7 @@ const mSTP = ({ entities, session }) => {
         currentUserId: session.id,
         friendships: entities.friendships,
         users: entities.users
-    }
+    };
 };
 
 const mDTP = dispatch => ({

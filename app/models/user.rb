@@ -12,6 +12,10 @@ class User < ApplicationRecord
     class_name: :Friend,
     foreign_key: :user_id
 
+  has_many :comments,
+    foreign_key: :commenter_id,
+    class_name: :Comment
+
   attr_reader :password
   after_initialize :ensure_session_token
 

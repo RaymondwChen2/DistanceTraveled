@@ -1,6 +1,5 @@
 import React from 'react';
-import MarkerManager from '../../utils/marker_manager';
-import TheMap from '../mapping/map';
+import CommentsIndex from '../comments/comments_index';
 import { AiFillCaretLeft } from 'react-icons/ai';
 import { AiFillCaretRight } from 'react-icons/ai';
 
@@ -91,6 +90,7 @@ class RouteslogShow extends React.Component {
                         <label id='directions-panel'>Distance: </label>
                             <span>{this.props.route.distance}</span>
                     </div>
+                    <CommentsIndex routeId={this.props.route.id} />
                 </div>
                 <div className='the-map-div'>
                     <div className='side-bar-button' onClick={() => this.closeForm()}>{this.state.sidebarDisplay === true ? <AiFillCaretLeft /> : <AiFillCaretRight />}</div>

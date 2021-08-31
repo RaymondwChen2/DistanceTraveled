@@ -1,6 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../utils/marker_manager';
-import TheMap from '../mapping/map';
+import CommentsIndex from '../comments/comments_index';
 import { AiOutlineUndo } from 'react-icons/ai';
 import { MdClear } from 'react-icons/md';
 import { FaExchangeAlt } from 'react-icons/fa';
@@ -37,46 +37,47 @@ class RouteslogEdit extends React.Component {
     if (!this.props.route){
       this.props.fetchRoutelog(this.props.match.params.id);
     } 
-
+    
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.state.waypoints);
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateRouteLog({
-                              waypoints: JSON.stringify(this.MarkerManager.waypts),
-                              route_title: this.state.route_title, 
-                              description: this.state.description, 
-                              distance: this.MarkerManager.distance,
-                              id: this.props.route.id
+      waypoints: JSON.stringify(this.MarkerManager.waypts),
+      route_title: this.state.route_title, 
+      description: this.state.description, 
+      distance: this.MarkerManager.distance,
+      id: this.props.route.id
     }).then(this.props.history.push('/dashboard'));
   }
-
+  
   updateDescription(e) {
     this.setState({ description: e.target.value })
   }
-
+  
   updateTitle(e) {
     this.setState({ route_title: e.target.value })
   }
-
+  
   closeForm(e) {
     let formSidebar = document.getElementById("map-form");
     let sideBar = document.getElementsByClassName('side-bar-button');
-
+    
     if (formSidebar.style.display === 'none') {
       this.setState({ sidebarDisplay: true });
       formSidebar.style.display = 'flex';
     } else {
       this.setState({ sidebarDisplay: false });
       formSidebar.style.display = 'none';
-
+      
     }
   }
-
+  
   
   render(){
+    debugger
     if(!this.props.route){
       return null;
     }
@@ -95,6 +96,7 @@ class RouteslogEdit extends React.Component {
             <label id='directions-panel'>Distance: </label>
             <input type="submit" value="Update Route" />
           </form>
+          <CommentsIndex routeId={this.props.route.id} />
         </div>
         <div className='the-map-div'>
           <div className='route-tools'>
