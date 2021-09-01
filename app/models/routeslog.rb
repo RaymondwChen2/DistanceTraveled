@@ -11,6 +11,6 @@ class Routeslog < ApplicationRecord
     class_name: :User
 
   has_many :comments,
-    foreign_key: :route_id,
+    foreign_key: :routeslog_id,
     class_name: :Comment
 end

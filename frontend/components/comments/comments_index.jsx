@@ -1,45 +1,52 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { requestComments, createComment } from "../../actions/comment_actions";
+import React from "react";
 import CommentItem from "./comment_index_item";
 
-const CommentsIndex = ({ currentUser, comments, routeId, requestComments, createComment }) => {
-    const [body, setBody] = useState('');
-    useEffect(() => {
-        requestComments(routeId);
-    }, [])
 
-    const addComment = () => {
-        const comment = {
-            commenter_id: currentUser,
-            route_id: routeId,
-            body
-        }
+class CommentsIndex extends React.Component{
+    constructor(props){
+        super(props);
 
-        createComment(comment);
-        setBody("");
+        this.state = {
+            body: "",
+            commenter_id: this.props.currentUser,
+            routeslog_id: this.props.routeId
+        };
+
+        this.addComment = this.addComment.bind(this);
+        this.handleBody = this.handleBody.bind(this);
     }
 
-    return (
-        <div className="comments-container">
-            <span className="comments-count">{comments.length} Comments</span>
-            <textarea className="comments-textarea" cols="30" rows="2" wrap="hard" value={body} placeholder='Add a comment' onChange={e => setBody(e.target.value)}></textarea>
-            <button className="add-comment-btn" onClick={addComment}>Comment</button>
-            {
-                comments.map(comment => <CommentItem key={comment.id} comment={comment} />)
-            }
-        </div>
-    )
+    componentDidMount(){
+        this.props.requestComments(this.props.routeId);
+    }
+
+    addComment(e) {
+        e.preventDefault();
+        this.props.createComment({
+                                body: this.state.body,
+                                routeslog_id: this.state.routeslog_id, 
+                                commenter_id: this.state.commenter_id
+                                });
+    }
+
+    handleBody(e){
+        this.setState({body: e.target.value});
+
+
+    }
+
+    render(){
+        return (
+            <div id="map-form">
+                <span className="comments-count"> {this.props.comments.length} Comments</span>
+                <textarea className="comments-textarea" cols="30" rows="2" wrap="hard" value={this.state.body} placeholder='Add a comment' onChange={this.handleBody}></textarea>
+                <button className="add-comment-btn" onClick={this.addComment}>Comment</button>
+                {
+                    this.props.comments.map(comment => <CommentItem key={comment.id} comment={comment} />)
+                }
+            </div>
+        )
+    }
 }
 
-const mSTP = state => ({
-    currentUser: state.entities.users[state.session.id],
-    comments: state.entities.comments ? Object.values(state.entities.comments).reverse() : []
-})
-
-const mDTP = dispatch => ({
-    requestComments: (routeId) => dispatch(requestComments(routeId)),
-    createComment: comment => dispatch(createComment(comment))
-})
-
-export default connect(mSTP, mDTP)(CommentsIndex);
+export default CommentsIndex

@@ -21,20 +21,20 @@ const removeComment = commentId => ({
 
 export const requestComments = routeId => dispatch => {
     return CommentAPIUtil.fetchRouteComments(routeId)
-        .then(comments => dispatch(receiveRouteComments(comments)))
+        .then(comments => dispatch(receiveRouteComments(comments)));
 };
 
 export const createComment = comment => dispatch => {
     return CommentAPIUtil.createComment(comment)
-        .then(comment => dispatch(receiveComment(comment)))
+        .then(comment => dispatch(receiveComment(comment)));
 };
 
 export const updateComment = comment => dispatch => {
     return CommentAPIUtil.updateComment(comment)
-        .then(comment => dispatch(receiveComment(comment)))
+        .then(comment => dispatch(receiveComment(comment)));
 };
 
 export const deleteComment = commentId => dispatch => {
     return CommentAPIUtil.deleteComment(commentId)
-        .then(() => dispatch(removeComment(commentId)))
+        .then(() => dispatch(removeComment(commentId)));
 };

@@ -14,7 +14,6 @@ class TheRoutesLog extends React.Component {
   
   
   render(){
-  // if (this.props.routeslogs.length <= 0) return null
   return(
     <div className='route-container'>
       <div className="route-head">

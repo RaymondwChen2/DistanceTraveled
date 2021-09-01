@@ -1,6 +1,7 @@
 import React from 'react';
 import MarkerManager from '../../utils/marker_manager';
-import CommentsIndex from '../comments/comments_index';
+import CommentsIndexContainer from '../comments/comments_index_container';
+// import { requestComments  } from '../../actions/comment_actions';
 import { AiOutlineUndo } from 'react-icons/ai';
 import { MdClear } from 'react-icons/md';
 import { FaExchangeAlt } from 'react-icons/fa';
@@ -25,6 +26,7 @@ class RouteslogEdit extends React.Component {
     this.updateDescription = this.updateDescription.bind(this);
     
   }
+
   componentDidMount(){
     const mapOptions = {
       center: { lat: 37.79916, lng: -122.40132 }, 
@@ -77,26 +79,25 @@ class RouteslogEdit extends React.Component {
   
   
   render(){
-    debugger
     if(!this.props.route){
       return null;
     }
     return (
     <div className='map-container'>
         <div>
-          <form onSubmit={this.handleSubmit} id='map-form' >
-            <label>Title:
-              <br />
-              <input type="text" className='route-title' value={this.state.route_title} onChange={this.updateTitle} />
-            </label>
-            <label>Description:
-              <br />
-              <textarea value={this.state.description} onChange={this.updateDescription} />
-            </label>
-            <label id='directions-panel'>Distance: </label>
-            <input type="submit" value="Update Route" />
-          </form>
-          <CommentsIndex routeId={this.props.route.id} />
+            <form onSubmit={this.handleSubmit} id='map-form' >
+              <label>Title:
+                <br />
+                <input type="text" className='route-title' value={this.state.route_title} onChange={this.updateTitle} />
+              </label>
+              <label>Description:
+                <br />
+                <textarea value={this.state.description} onChange={this.updateDescription} />
+              </label>
+              <label id='directions-panel'>Distance: </label>
+              <input type="submit" value="Update Route" />
+            </form>
+            <CommentsIndexContainer  routeId={this.props.route.id} />
         </div>
         <div className='the-map-div'>
           <div className='route-tools'>
