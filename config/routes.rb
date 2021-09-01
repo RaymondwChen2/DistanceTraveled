@@ -12,9 +12,10 @@ Rails.application.routes.draw do
     
     resources :routeslog, only: [:show, :create, :destroy, :update] do
       resources :comments, only: [:index]
+      resources :likes, only: [:index]
     end
     
-    
+    resources :likes, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
     resources :friends, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy, :update]

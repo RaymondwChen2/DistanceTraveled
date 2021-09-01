@@ -12,6 +12,7 @@ import FriendsIndexContainer from './friend/friend_index_container';
 import FriendFinderContainer from './friend/friend_finder_container';
 import UsersShowContainer from './user/user_show_container';
 import RouteslogShowContainer from './routeslog/routeslog_show_container';
+import LikeIndexContainer from './like/like_index_container';
 
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
     <nav className='nav-link'>
     <GreetingContainer/>
     </nav>
+      <ProtectedRoute exact path='/likes' component={LikeIndexContainer}/>
       <ProtectedRoute exact path='/dashboard/friends' component={FriendsIndexContainer} />
       <ProtectedRoute exact path='/dashboard/friends/find' component={FriendFinderContainer} />
       <ProtectedRoute exact path="/dashboard" component={RoutesLogIndexContainer} /> 

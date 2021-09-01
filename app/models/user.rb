@@ -16,6 +16,10 @@ class User < ApplicationRecord
     foreign_key: :commenter_id,
     class_name: :Comment
 
+  has_many :likes,
+  foreign_key: :liker_id,
+  class_name: :Like
+
   attr_reader :password
   after_initialize :ensure_session_token
 

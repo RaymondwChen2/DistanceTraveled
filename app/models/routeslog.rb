@@ -13,4 +13,8 @@ class Routeslog < ApplicationRecord
   has_many :comments,
     foreign_key: :routeslog_id,
     class_name: :Comment
+
+  has_many :likes,
+  foreign_key: :routeslog_id,
+  class_name: :Like
 end

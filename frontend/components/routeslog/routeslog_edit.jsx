@@ -1,7 +1,7 @@
 import React from 'react';
 import MarkerManager from '../../utils/marker_manager';
 import CommentsIndexContainer from '../comments/comments_index_container';
-// import { requestComments  } from '../../actions/comment_actions';
+import LikeIndexContainer from '../like/like_index_container';
 import { AiOutlineUndo } from 'react-icons/ai';
 import { MdClear } from 'react-icons/md';
 import { FaExchangeAlt } from 'react-icons/fa';
@@ -65,7 +65,6 @@ class RouteslogEdit extends React.Component {
   
   closeForm(e) {
     let formSidebar = document.getElementById("map-form");
-    let sideBar = document.getElementsByClassName('side-bar-button');
     
     if (formSidebar.style.display === 'none') {
       this.setState({ sidebarDisplay: true });
@@ -98,6 +97,7 @@ class RouteslogEdit extends React.Component {
               <input type="submit" value="Update Route" />
             </form>
             <CommentsIndexContainer  routeId={this.props.route.id} />
+            <LikeIndexContainer routeId={this.props.route.id} />
         </div>
         <div className='the-map-div'>
           <div className='route-tools'>
