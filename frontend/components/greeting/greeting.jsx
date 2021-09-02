@@ -23,7 +23,7 @@ const Greeting = ({ currentUser, logout, login }) => {
       <div className="dash-board-container">
         <div className='dash-board-nav'>
           <div><a className='homeLogo' href="/"></a></div>
-          <div><Link to="/create_route" className="create-route-button">Create Route</Link></div>
+          <div><Link to="/dashboard" className="create-route-button">Home</Link></div>
           <div><button className="logout-button" onClick={logout}>Log Out</button></div>
         </div>
       </div>

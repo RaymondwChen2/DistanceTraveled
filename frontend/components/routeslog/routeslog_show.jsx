@@ -2,6 +2,8 @@ import React from 'react';
 import CommentsIndexContainer from '../comments/comments_index_container';
 import { AiFillCaretLeft } from 'react-icons/ai';
 import { AiFillCaretRight } from 'react-icons/ai';
+import LikeIndexContainer from '../like/like_index_container';
+
 
 class RouteslogShow extends React.Component {
     constructor(props) {
@@ -79,18 +81,20 @@ class RouteslogShow extends React.Component {
             <div className='map-container'>
                 <div>
                     <div id='map-form' >
-                        <label>Title:
+                        <label className='route-show-header'>Title
                             <br />
-                            <span>{this.props.route.route_title}</span>
+                            <span className='route-show-span'>{this.props.route.route_title}</span>
                         </label>
-                        <label>Description:
+                        <label className='route-show-header'>Description
                             <br />
-                            <span>{this.props.route.description}</span>
+                            <span className='route-show-span'>{this.props.route.description}</span>
                         </label>
-                        <label id='directions-panel'>Distance: </label>
-                            <span>{this.props.route.distance}</span>
-                    </div>
+                        <label id='directions-panel' className='route-show-header'>Distance </label>
+                        <span className='route-show-span'>{this.props.route.distance}</span>
+                    <LikeIndexContainer routeId={this.props.route.id} />
                     <CommentsIndexContainer routeId={this.props.route.id} />
+
+                    </div>
                 </div>
                 <div className='the-map-div'>
                     <div className='side-bar-button' onClick={() => this.closeForm()}>{this.state.sidebarDisplay === true ? <AiFillCaretLeft /> : <AiFillCaretRight />}</div>

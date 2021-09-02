@@ -102,3 +102,48 @@ button:hover {
         }
     }
 }
+
+.dashboard-head {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    text-decoration: none;
+
+    Link:hover{
+        background-color: grey;
+    }
+}
+
+.route-show-header{
+    font-size: 26px;
+    font-weight: 50px;
+}
+
+.route-show-span{
+    font-size: 16px;
+}
+
+.create-route-button{
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    color:black;
+}
+
+.create-route-button:hover{
+    background-color: grey;
+}
+
+.dashlink {
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.dashlink:hover {
+    background-color: grey;
+}

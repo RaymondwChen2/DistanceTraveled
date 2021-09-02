@@ -18,7 +18,10 @@ class TheRoutesLog extends React.Component {
     <div className='route-container'>
       <div className="route-head">
         <h1>Routes</h1>
-        <Link to={"/dashboard/friends"}>Friend list</Link>
+        <div className='dashboard-head'>
+          <Link className='dashlink' to='/create_route'>Create Route</Link>
+          <Link className='dashlink' to={"/dashboard/friends"}>Friend list</Link>
+        </div>
       </div>
         <div className='route-placement'>
           <h2>Title</h2>

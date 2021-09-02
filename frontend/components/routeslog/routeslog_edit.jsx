@@ -95,9 +95,10 @@ class RouteslogEdit extends React.Component {
               </label>
               <label id='directions-panel'>Distance: </label>
               <input type="submit" value="Update Route" />
-            </form>
-            <CommentsIndexContainer  routeId={this.props.route.id} />
+              <br/>
             <LikeIndexContainer routeId={this.props.route.id} />
+            <CommentsIndexContainer  routeId={this.props.route.id} />
+            </form>
         </div>
         <div className='the-map-div'>
           <div className='route-tools'>

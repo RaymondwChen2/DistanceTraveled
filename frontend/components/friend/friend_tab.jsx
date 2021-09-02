@@ -5,10 +5,13 @@ const Tab = () => {
     return(
         <div className='friend-tab'>
             <div>
-                <Link to='/dashboard/friends'>FOLLOWING</Link>
+                <Link className='dashlink' to='/create_route'>Create Route</Link>
             </div>
             <div>
-                <Link to='/dashboard/friends/find'>FIND USERS</Link>
+                <Link className='dashlink' to='/dashboard/friends'>Following</Link>
+            </div>
+            <div>
+                <Link className='dashlink' to='/dashboard/friends/find'>Find Users</Link>
             </div>
         </div>
     )

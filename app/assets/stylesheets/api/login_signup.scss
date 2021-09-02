@@ -57,14 +57,17 @@
 .signup-button{
   display: flex;
   justify-content: center;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    // padding-left: px;
-    background-color: #1DDD7C;
-    border-radius: 5px;
-    width: 65px;
-    height: 15px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #1DDD7C;
+  border-radius: 5px;
+  width: 65px;
+  height: 15px;
+}
+
+.signup-button:hover{
+  background-color: grey;
 }
 
 .homeLogo{
@@ -129,4 +132,8 @@
 
 .session-errors{
   color: red;
+}
+
+.session-submit:hover{
+  background-color: grey;
 }

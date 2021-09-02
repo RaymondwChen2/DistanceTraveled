@@ -1,4 +1,6 @@
 import React from 'react';
+import { FcLike } from 'react-icons/fc';
+import { FcLikePlaceholder } from 'react-icons/fc'
 
 class LikeIndex extends React.Component {
     constructor(props){
@@ -44,7 +46,7 @@ class LikeIndex extends React.Component {
     render(){
         return(
             <div>
-                <button className='like-button' onClick={this.handleLike}>{this.props.likes.length}</button>
+                <span className='like-button' onClick={this.handleLike}>{this.props.likes.length}{this.state.done ? <FcLike/> : <FcLikePlaceholder/>}</span>
             </div>
         )
     }

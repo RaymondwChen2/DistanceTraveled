@@ -1,3 +1,32 @@
 // Place all the styles related to the api/comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comments-count {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: rgb(109, 107, 107);
+}
+
+.comments-textarea {
+    padding-bottom: 10px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-user-link{ 
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.comment-div {
+    padding-top: 10px;
+    width: 100%;
+}
+
+.comment-body {
+    padding-top: 10px;
+}
