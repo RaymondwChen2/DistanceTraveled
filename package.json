@@ -1,5 +1,5 @@
 {
-  "name": "DistanceTravelled",
+  "name": "DistanceTraveled",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.13.14",
@@ -20,7 +20,7 @@
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "App.jsx",
   "directories": {
     "lib": "lib",
     "test": "test"
