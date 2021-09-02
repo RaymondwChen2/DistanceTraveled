@@ -26,11 +26,11 @@
     "lib": "lib",
     "test": "test"
   },
-"scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "start": "webpack --watch --mode=development",
-  "postinstall": "webpack"
-},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
+  },
   "engines": {
     "node": "12.22.1",
     "npm": "6.14.12"
