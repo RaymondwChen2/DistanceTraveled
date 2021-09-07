@@ -15,6 +15,11 @@ class SessionForm extends React.Component {
     this.onSignUpForm = this.onSignUpForm.bind(this);
   }
 
+
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -126,7 +131,7 @@ class SessionForm extends React.Component {
                   className="signup-input"
                   />
                 <br/>
-                  <input type='text' 
+                  <input type='email'
                     placeholder="Email"
                     value={this.state.email} 
                     onChange={this.update('email')}
@@ -172,5 +177,7 @@ class SessionForm extends React.Component {
     )
 }
 }
+
+
 
 export default SessionForm;

@@ -13,6 +13,8 @@ import FriendFinderContainer from './friend/friend_finder_container';
 import UsersShowContainer from './user/user_show_container';
 import RouteslogShowContainer from './routeslog/routeslog_show_container';
 import LikeIndexContainer from './like/like_index_container';
+import { connect } from 'react-redux';
+import { clearSessionErrors } from "../actions/session_actions";
 
 
 const App = () => (
@@ -36,5 +38,6 @@ const App = () => (
 
   </div>
 );
+
 
 export default App;

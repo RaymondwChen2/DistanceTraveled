@@ -6,29 +6,34 @@
 .friends-content-container{
     border: solid 1px black;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     margin-top: 40px;
-    margin-right: 200px;
-    margin-left: 200px;
+    margin-right: 400px;
+    margin-left: 400px;
 
     div {
-        flex: 50%;
+        justify-content: space-between;
     }
 }
 
 .friend-index-item{
     display: flex;
+    justify-content: space-between;
+    width: 75%;
+    padding-bottom: 10px;
 }
 
 .full-name-container{
     display: flex;
-    width: 50%;
+    width: 100%;
     padding: 20px;
 }
 
 .friend-content{
-    width: 40px;
+    width: 100%;
+    align-items: center;
 }
 
 .remove-friend-btn{

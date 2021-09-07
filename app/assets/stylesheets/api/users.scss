@@ -11,23 +11,31 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 40px;
+    width: 100%
+}
+
+.users-table-items{
+    text-align: center;
+    padding: 10px;
+
+    td{
+        padding: 10px;
+    }
 }
 
 
 .users-table-container{
-    width: 100%;
+    width: 1000px;
     display: flex;
     justify-content: center;
     padding-top: 25px;
 }
 
 .users-table{
+    margin:0 auto;
     border: solid 1px black;
-    width: 1000px;
+    width: 95%;
 }
-
-// .users-table-items{
-// }
 
 .show-fullname{
     font-weight: 100px;
@@ -35,3 +43,10 @@
     padding-right: 20px;
 }
 
+
+.table-header {
+    font-weight: 1000;
+    font-size: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
